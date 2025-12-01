@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- TEMPLATE: Update the page title for each project -->
+    <title>Project Name - N.NMURIITHI Portfolio</title>
+
+<!--
+
+Breezed Template
+
+https://templatemo.com/tm-543-breezed
+
+-->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+
+    <link rel="stylesheet" href="../assets/css/templatemo-breezed.css">
+
+    <link rel="stylesheet" href="../assets/css/owl-carousel.css">
+
+    <link rel="stylesheet" href="../assets/css/lightbox.css">
+
+    <!-- Custom Project Page Styles -->
+    <style>
+        /* Project Info Section */
+        .project-hero {
+            padding: 140px 0 80px 0;
+            background: #f7f7f7;
+        }
+        
+        .project-info-sidebar {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 100px;
+            transition: all 0.3s ease;
+        }
+        
+        .project-info-sidebar h6 {
+            color: #5fb759;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .project-info-sidebar h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1e1e1e;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .project-info-sidebar p {
+            color: #777;
+            font-size: 14px;
+            line-height: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .tech-stack {
+            margin-bottom: 25px;
+        }
+        
+        .tech-stack h5 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e1e1e;
+            margin-bottom: 12px;
+        }
+        
+        .tech-stack ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .tech-stack ul li {
+            display: inline-block;
+            background: #f7f7f7;
+            color: #777;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin: 5px 5px 5px 0;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .project-links {
+            margin-bottom: 25px;
+        }
+        
+        .project-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #5fb759;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .project-links a:hover {
+            color: #4a9647;
+        }
+        
+        .project-links a i {
+            margin-right: 5px;
+        }
+        
+        .image-navigation {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        
+        .image-navigation h5 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e1e1e;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .nav-btn {
+            width: 45px;
+            height: 45px;
+            background: #5fb759;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .nav-btn:hover {
+            background: #4a9647;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(95,183,89,0.3);
+        }
+        
+        .preview-image {
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        
+        .preview-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Floating Button */
+        .floating-info-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #5fb759;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(95,183,89,0.4);
+            z-index: 999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .floating-info-btn:hover {
+            background: #4a9647;
+            transform: scale(1.1);
+        }
+        
+        .floating-info-btn.show {
+            display: flex;
+        }
+        
+        /* Floating Panel Overlay */
+        .info-overlay {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: #fff;
+            box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+            overflow-y: auto;
+            transition: right 0.3s ease;
+            padding: 80px 30px 30px 30px;
+        }
+        
+        .info-overlay.active {
+            right: 0;
+        }
+        
+        .info-overlay-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .info-overlay-backdrop.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        .close-overlay {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: #f7f7f7;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            color: #777;
+            transition: all 0.3s ease;
+        }
+        
+        .close-overlay:hover {
+            background: #5fb759;
+            color: #fff;
+        }
+        
+        /* Image Gallery Sections */
+        .image-section {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .image-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 70%, transparent 100%);
+            padding: 40px 30px 30px 30px;
+            color: #fff;
+        }
+        
+        .image-caption h4 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .image-caption p {
+            font-size: 14px;
+            line-height: 22px;
+            margin: 0;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        /* Responsive */
+        @media (max-width: 991px) {
+            .project-info-sidebar {
+                position: static;
+                margin-bottom: 40px;
+            }
+            
+            .floating-info-btn {
+                display: flex;
+            }
+            
+            .info-overlay {
+                width: 100%;
+                right: -100%;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .project-hero {
+                padding: 120px 0 40px 0;
+            }
+            
+            .project-info-sidebar h2 {
+                font-size: 24px;
+            }
+            
+            .floating-info-btn {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .image-caption {
+                padding: 30px 20px 20px 20px;
+            }
+            
+            .image-caption h4 {
+                font-size: 18px;
+            }
+        }
+    </style>
+
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="../index.html" class="logo">
+                            N.NMURIITHI
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../index.html#about">About Me</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">Projects</a>
+                                <ul>
+                                    <li><a href="project_one.html">Project 1</a></li>
+                                    <li><a href="project_two.html">Project 2</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="../contact/email.html">Contact</a></li> 
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    
+    
+    <!-- ======================================
+         PROJECT HERO SECTION WITH INFO SIDEBAR
+         ====================================== -->
+    <!-- ***** Project Hero Section Start ***** -->
+    <section class="project-hero" id="top">
+        <div class="container">
+            <div class="row">
+                <!-- PROJECT INFO SIDEBAR - 1/3 width on desktop -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="project-info-sidebar" id="projectInfo">
+                        <!-- TEMPLATE: Project Category -->
+                        <!-- EDIT: Change the category text below -->
+                        <h6>Web Development</h6>
+                        
+                        <!-- TEMPLATE: Project Title -->
+                        <!-- EDIT: Change the project title below -->
+                        <h2>E-Commerce Platform Redesign</h2>
+                        
+                        <!-- TEMPLATE: Project Description -->
+                        <!-- EDIT: Change the description text below -->
+                        <p>A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles. The project included full UI/UX overhaul, frontend development, and performance optimization.</p>
+                        
+                        <!-- TEMPLATE: Technology Stack -->
+                        <!-- EDIT: Add or remove technologies as needed -->
+                        <div class="tech-stack">
+                            <h5>Technologies Used</h5>
+                            <ul>
+                                <li>React</li>
+                                <li>Node.js</li>
+                                <li>MongoDB</li>
+                                <li>Tailwind CSS</li>
+                                <li>Stripe API</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- TEMPLATE: Project Links -->
+                        <!-- EDIT: Update URLs and add/remove links as needed -->
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fa fa-external-link"></i> Live Demo</a>
+                            <a href="#" target="_blank"><i class="fa fa-github"></i> View Code</a>
+                        </div>
+                        
+                        <!-- TEMPLATE: Image Navigation -->
+                        <!-- EDIT: Add or remove buttons based on number of images -->
+                        <div class="image-navigation">
+                            <h5>Jump to Section</h5>
+                            <div class="nav-buttons">
+                                <button class="nav-btn" onclick="scrollToImage(1)">1</button>
+                                <button class="nav-btn" onclick="scrollToImage(2)">2</button>
+                                <button class="nav-btn" onclick="scrollToImage(3)">3</button>
+                                <button class="nav-btn" onclick="scrollToImage(4)">4</button>
+                                <button class="nav-btn" onclick="scrollToImage(5)">5</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PREVIEW IMAGE - 2/3 width on desktop -->
+                <div class="col-lg-8 col-md-12">
+                    <div class="preview-image">
+                        <!-- TEMPLATE: Hero Preview Image -->
+                        <!-- EDIT: Change the image src to your preview image -->
+                        <img src="../assets/images/slide-01.jpg" alt="Project Preview">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Project Hero Section End ***** -->
+    
+    
+    <!-- ======================================
+         VERTICAL IMAGE GALLERY SECTIONS
+         ====================================== -->
+    <!-- ***** Image Gallery Start ***** -->
+    
+    <!-- IMAGE SECTION 1 -->
+    <!-- TEMPLATE: First Feature Image -->
+    <!-- EDIT: Change image src and caption text -->
+    <section class="image-section" id="image-1">
+        <div class="image-container">
+            <img src="../assets/images/slide-01.jpg" alt="Project Image 1">
+            <div class="image-caption">
+                <h4>Initial Design Concept</h4>
+                <p>The wireframe and initial design mockups focusing on clean navigation and intuitive user flows.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- IMAGE SECTION 2 -->
+    <!-- TEMPLATE: Second Feature Image -->
+    <!-- EDIT: Change image src and caption text -->
+    <section class="image-section" id="image-2">
+        <div class="image-container">
+            <img src="../assets/images/slide-01.jpg" alt="Project Image 2">
+            <div class="image-caption">
+                <h4>Product Page Layout</h4>
+                <p>Refined product pages with enhanced imagery, detailed descriptions, and streamlined checkout flow.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- IMAGE SECTION 3 -->
+    <!-- TEMPLATE: Third Feature Image -->
+    <!-- EDIT: Change image src and caption text -->
+    <section class="image-section" id="image-3">
+        <div class="image-container">
+            <img src="../assets/images/slide-01.jpg" alt="Project Image 3">
+            <div class="image-caption">
+                <h4>Mobile Responsive Design</h4>
+                <p>Mobile-first approach ensuring seamless experience across all device sizes and orientations.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- IMAGE SECTION 4 -->
+    <!-- TEMPLATE: Fourth Feature Image -->
+    <!-- EDIT: Change image src and caption text -->
+    <section class="image-section" id="image-4">
+        <div class="image-container">
+            <img src="../assets/images/slide-01.jpg" alt="Project Image 4">
+            <div class="image-caption">
+                <h4>Dashboard & Analytics</h4>
+                <p>Admin dashboard with real-time analytics, inventory management, and order tracking capabilities.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- IMAGE SECTION 5 -->
+    <!-- TEMPLATE: Fifth Feature Image -->
+    <!-- EDIT: Change image src and caption text -->
+    <section class="image-section" id="image-5">
+        <div class="image-container">
+            <img src="../assets/images/slide-01.jpg" alt="Project Image 5">
+            <div class="image-caption">
+                <h4>Final Implementation</h4>
+                <p>The completed platform with full integration, payment processing, and performance optimization.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ***** Image Gallery End ***** -->
+    
+    
+    <!-- ======================================
+         FLOATING INFO BUTTON & OVERLAY PANEL
+         ====================================== -->
+    <!-- Floating Info Button -->
+    <button class="floating-info-btn" id="floatingBtn" onclick="toggleInfoOverlay()">
+        <i class="fa fa-info"></i>
+    </button>
+    
+    <!-- Info Overlay Panel -->
+    <div class="info-overlay-backdrop" id="overlayBackdrop" onclick="toggleInfoOverlay()"></div>
+    <div class="info-overlay" id="infoOverlay">
+        <button class="close-overlay" onclick="toggleInfoOverlay()">
+            <i class="fa fa-times"></i>
+        </button>
+        
+        <!-- TEMPLATE: This content mirrors the sidebar content -->
+        <div id="overlayContent">
+            <!-- Content will be cloned from sidebar via JavaScript -->
+        </div>
+    </div>
+    
+    
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-xs-12">
+                    <div class="left-text-content">
+                        <p>Copyright &copy; 2020 Breezed Co., Ltd. 
+                        
+                        - Design: <a rel="nofollow noopener" href="https://templatemo.com">TemplateMo</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xs-12">
+                    <div class="right-text-content">
+                            <ul id="social-section" class="social-icons">
+                                <li><p>Follow Us</p></li>
+                                <li><a rel="nofollow" href="https://fb.com/templatemo"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="../assets/js/popper.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="../assets/js/owl-carousel.js"></script>
+    <script src="../assets/js/scrollreveal.min.js"></script>
+    <script src="../assets/js/waypoints.min.js"></script>
+    <script src="../assets/js/jquery.counterup.min.js"></script>
+    <script src="../assets/js/imgfix.min.js"></script> 
+    <script src="../assets/js/slick.js"></script> 
+    <script src="../assets/js/lightbox.js"></script> 
+    <script src="../assets/js/isotope.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="../assets/js/custom.js"></script>
+
+    <script>
+        // ======================================
+        // PROJECT PAGE INTERACTIVE FUNCTIONALITY
+        // ======================================
+        
+        $(document).ready(function() {
+            // Clone sidebar content to overlay panel
+            var sidebarContent = $('#projectInfo').html();
+            $('#overlayContent').html(sidebarContent);
+            
+            // Handle scroll to show/hide floating button
+            $(window).scroll(function() {
+                var scrollTop = $(window).scrollTop();
+                var heroHeight = $('.project-hero').outerHeight();
+                
+                // Show floating button when scrolled past hero section
+                if (scrollTop > heroHeight - 100) {
+                    $('#floatingBtn').addClass('show');
+                } else {
+                    $('#floatingBtn').removeClass('show');
+                }
+            });
+            
+            // Smooth scroll for navigation buttons
+            window.scrollToImage = function(imageNumber) {
+                var target = $('#image-' + imageNumber);
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 80
+                    }, 800);
+                }
+            };
+            
+            // Toggle info overlay panel
+            window.toggleInfoOverlay = function() {
+                $('#infoOverlay').toggleClass('active');
+                $('#overlayBackdrop').toggleClass('active');
+                
+                // Prevent body scroll when overlay is open
+                if ($('#infoOverlay').hasClass('active')) {
+                    $('body').css('overflow', 'hidden');
+                } else {
+                    $('body').css('overflow', 'auto');
+                }
+            };
+            
+            // Close overlay with ESC key
+            $(document).keyup(function(e) {
+                if (e.key === "Escape" && $('#infoOverlay').hasClass('active')) {
+                    toggleInfoOverlay();
+                }
+            });
+        });
+
+    </script>
+
+  </body>
+</html>
