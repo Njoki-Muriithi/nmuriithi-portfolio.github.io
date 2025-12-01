@@ -34,7 +34,7 @@ https://templatemo.com/tm-543-breezed
     <style>
         /* Project Info Section */
         .project-hero {
-            padding: 140px 0 80px 0;
+            padding: 140px 0 0 0;
             background: #f7f7f7;
         }
         
@@ -45,7 +45,27 @@ https://templatemo.com/tm-543-breezed
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
             position: sticky;
             top: 100px;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
             transition: all 0.3s ease;
+        }
+        
+        .project-info-sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .project-info-sidebar::-webkit-scrollbar-track {
+            background: #f7f7f7;
+            border-radius: 3px;
+        }
+        
+        .project-info-sidebar::-webkit-scrollbar-thumb {
+            background: #5fb759;
+            border-radius: 3px;
+        }
+        
+        .project-info-sidebar::-webkit-scrollbar-thumb:hover {
+            background: #4a9647;
         }
         
         .project-info-sidebar h6 {
@@ -164,16 +184,8 @@ https://templatemo.com/tm-543-breezed
             box-shadow: 0 5px 10px rgba(95,183,89,0.3);
         }
         
-        .preview-image {
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
-        
-        .preview-image img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .images-column {
+            padding: 0;
         }
         
         /* Floating Button */
@@ -405,10 +417,80 @@ https://templatemo.com/tm-543-breezed
          ====================================== -->
     <!-- ***** Project Hero Section Start ***** -->
     <section class="project-hero" id="top">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <!-- PROJECT INFO SIDEBAR - 1/3 width on desktop -->
-                <div class="col-lg-4 col-md-12">
+                <!-- IMAGES COLUMN - 2/3 width on left -->
+                <div class="col-lg-8 col-md-12 images-column order-lg-1 order-2">
+                    <!-- Vertical image gallery starts here -->
+                    
+                    <!-- IMAGE SECTION 1 -->
+                    <!-- TEMPLATE: First Feature Image -->
+                    <!-- EDIT: Change image src and caption text -->
+                    <section class="image-section" id="image-1">
+                        <div class="image-container">
+                            <img src="../../assets/images/slide-01.jpg" alt="Project Image 1">
+                            <div class="image-caption">
+                                <h4>Initial Design Concept</h4>
+                                <p>The wireframe and initial design mockups focusing on clean navigation and intuitive user flows.</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- IMAGE SECTION 2 -->
+                    <!-- TEMPLATE: Second Feature Image -->
+                    <!-- EDIT: Change image src and caption text -->
+                    <section class="image-section" id="image-2">
+                        <div class="image-container">
+                            <img src="../../assets/images/slide-01.jpg" alt="Project Image 2">
+                            <div class="image-caption">
+                                <h4>Product Page Layout</h4>
+                                <p>Refined product pages with enhanced imagery, detailed descriptions, and streamlined checkout flow.</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- IMAGE SECTION 3 -->
+                    <!-- TEMPLATE: Third Feature Image -->
+                    <!-- EDIT: Change image src and caption text -->
+                    <section class="image-section" id="image-3">
+                        <div class="image-container">
+                            <img src="../../assets/images/slide-01.jpg" alt="Project Image 3">
+                            <div class="image-caption">
+                                <h4>Mobile Responsive Design</h4>
+                                <p>Mobile-first approach ensuring seamless experience across all device sizes and orientations.</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- IMAGE SECTION 4 -->
+                    <!-- TEMPLATE: Fourth Feature Image -->
+                    <!-- EDIT: Change image src and caption text -->
+                    <section class="image-section" id="image-4">
+                        <div class="image-container">
+                            <img src="../../assets/images/slide-01.jpg" alt="Project Image 4">
+                            <div class="image-caption">
+                                <h4>Dashboard & Analytics</h4>
+                                <p>Admin dashboard with real-time analytics, inventory management, and order tracking capabilities.</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- IMAGE SECTION 5 -->
+                    <!-- TEMPLATE: Fifth Feature Image -->
+                    <!-- EDIT: Change image src and caption text -->
+                    <section class="image-section" id="image-5">
+                        <div class="image-container">
+                            <img src="../../assets/images/slide-01.jpg" alt="Project Image 5">
+                            <div class="image-caption">
+                                <h4>Final Implementation</h4>
+                                <p>The completed platform with full integration, payment processing, and performance optimization.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- PROJECT INFO SIDEBAR - 1/3 width on right -->
+                <div class="col-lg-4 col-md-12 order-lg-2 order-1">
                     <div class="project-info-sidebar" id="projectInfo">
                         <!-- TEMPLATE: Project Category -->
                         <!-- EDIT: Change the category text below -->
@@ -420,7 +502,47 @@ https://templatemo.com/tm-543-breezed
                         
                         <!-- TEMPLATE: Project Description -->
                         <!-- EDIT: Change the description text below -->
-                        <p>A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles. The project included full UI/UX overhaul, frontend development, and performance optimization.</p>
+                        <p>A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+                             A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles.
+                             The project included full UI/UX overhaul, frontend development, and performance optimization.
+
+                             
+                        </p>
                         
                         <!-- TEMPLATE: Technology Stack -->
                         <!-- EDIT: Add or remove technologies as needed -->
@@ -456,92 +578,10 @@ https://templatemo.com/tm-543-breezed
                         </div>
                     </div>
                 </div>
-                
-                <!-- PREVIEW IMAGE - 2/3 width on desktop -->
-                <div class="col-lg-8 col-md-12">
-                    <div class="preview-image">
-                        <!-- TEMPLATE: Hero Preview Image -->
-                        <!-- EDIT: Change the image src to your preview image -->
-                        <img src="../../assets/images/slide-01.jpg" alt="Project Preview">
-                    </div>
-                </div>
             </div>
         </div>
     </section>
     <!-- ***** Project Hero Section End ***** -->
-    
-    
-    <!-- ======================================
-         VERTICAL IMAGE GALLERY SECTIONS
-         ====================================== -->
-    <!-- ***** Image Gallery Start ***** -->
-    
-    <!-- IMAGE SECTION 1 -->
-    <!-- TEMPLATE: First Feature Image -->
-    <!-- EDIT: Change image src and caption text -->
-    <section class="image-section" id="image-1">
-        <div class="image-container">
-            <img src="../../assets/images/slide-01.jpg" alt="Project Image 1">
-            <div class="image-caption">
-                <h4>Initial Design Concept</h4>
-                <p>The wireframe and initial design mockups focusing on clean navigation and intuitive user flows.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- IMAGE SECTION 2 -->
-    <!-- TEMPLATE: Second Feature Image -->
-    <!-- EDIT: Change image src and caption text -->
-    <section class="image-section" id="image-2">
-        <div class="image-container">
-            <img src="../../assets/images/slide-01.jpg" alt="Project Image 2">
-            <div class="image-caption">
-                <h4>Product Page Layout</h4>
-                <p>Refined product pages with enhanced imagery, detailed descriptions, and streamlined checkout flow.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- IMAGE SECTION 3 -->
-    <!-- TEMPLATE: Third Feature Image -->
-    <!-- EDIT: Change image src and caption text -->
-    <section class="image-section" id="image-3">
-        <div class="image-container">
-            <img src="../../assets/images/slide-01.jpg" alt="Project Image 3">
-            <div class="image-caption">
-                <h4>Mobile Responsive Design</h4>
-                <p>Mobile-first approach ensuring seamless experience across all device sizes and orientations.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- IMAGE SECTION 4 -->
-    <!-- TEMPLATE: Fourth Feature Image -->
-    <!-- EDIT: Change image src and caption text -->
-    <section class="image-section" id="image-4">
-        <div class="image-container">
-            <img src="../../assets/images/slide-01.jpg" alt="Project Image 4">
-            <div class="image-caption">
-                <h4>Dashboard & Analytics</h4>
-                <p>Admin dashboard with real-time analytics, inventory management, and order tracking capabilities.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- IMAGE SECTION 5 -->
-    <!-- TEMPLATE: Fifth Feature Image -->
-    <!-- EDIT: Change image src and caption text -->
-    <section class="image-section" id="image-5">
-        <div class="image-container">
-            <img src="../../assets/images/slide-01.jpg" alt="Project Image 5">
-            <div class="image-caption">
-                <h4>Final Implementation</h4>
-                <p>The completed platform with full integration, payment processing, and performance optimization.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- ***** Image Gallery End ***** -->
     
     
     <!-- ======================================
