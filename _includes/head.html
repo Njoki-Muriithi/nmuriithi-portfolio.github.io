@@ -19,4 +19,8 @@
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ page.extra_css }}">
 {% endif %}
 
+{% if layout.extra_css %}
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ layout.extra_css }}">
+{% endif %}
+
 {% include seo.html %}

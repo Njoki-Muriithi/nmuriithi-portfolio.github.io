@@ -1,19 +1,16 @@
 source "https://rubygems.org"
 
-# Use github-pages gem for compatibility with GitHub Pages
-gem "github-pages", group: :jekyll_plugins
+# Use Jekyll 4.x with Windows-compatible dependencies
+gem "jekyll", "~> 4.3"
 
-# Plugins
+# Plugins (GitHub Pages compatible)
 group :jekyll_plugins do
   gem "jekyll-sitemap"
   gem "jekyll-seo-tag"
 end
 
-# Windows and JRuby timezone support
-platforms :mingw, :x64_mingw, :mswin, :jruby do
-  gem "tzinfo", ">= 1", "< 3"
-  gem "tzinfo-data"
-end
+# Windows timezone support
+gem "tzinfo-data", platforms: [:windows]
 
-# Performance booster for watching directories on Windows
-gem "wdm", "~> 0.1", :platforms => [:mingw, :x64_mingw, :mswin]
+# HTTP server (required for Jekyll 4.x)
+gem "webrick", "~> 1.8"
