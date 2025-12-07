@@ -59,20 +59,7 @@ heading: Let's Work Together
             
             <div style="background: #f7f7f7; padding: 40px; border-radius: 5px; text-align: center;">
                 <i class="fa fa-envelope-o" style="font-size: 48px; color: #9FA8DA; margin-bottom: 20px;"></i>
-                <h4 style="margin-bottom: 15px;">Contact Form Coming Soon</h4>
-                <p style="color: #777;">Replace this placeholder with your embedded Google Form.<br>See the HTML comments above for instructions.</p>
-                
-                <!-- Uncomment and customize this iframe when you have your Google Form ready:
-                <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" 
-                        width="100%" 
-                        height="800" 
-                        frameborder="0" 
-                        marginheight="0" 
-                        marginwidth="0"
-                        title="Contact Form">
-                    Loading…
-                </iframe>
-                -->
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdhSpWRVlWRuGjtmAHTE7UV8zF-mOq9EMTduXXHWFR1G8JPjA/viewform?embedded=true" width="640" height="856" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
         </div>
     </div>

@@ -29,7 +29,7 @@ heading: Who I Am & What I Do
     </div>
     <div class="col-lg-6 col-md-6 col-xs-12">
         <div class="right-image">
-            <img src="{{ site.baseurl }}/assets/images/slide-01.jpg" alt="About Njoki Muriithi" style="border-radius: 5px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+            <img src="{{ site.baseurl }}/assets/images/self_pic2.JPG" alt="About Njoki Muriithi" style="border-radius: 5px; box-shadow: 0 0 15px rgba(0,0,0,0.1); max-width: 100%; max-height: 600px; width: auto; height: auto; object-fit: contain;">
         </div>
     </div>
 </div>
