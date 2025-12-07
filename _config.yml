@@ -4,7 +4,7 @@ description: "Portfolio of Njoki Muriithi - Developer and Creative Professional"
 author: "Njoki Muriithi"
 email: "contact@nmuriithi.com"
 baseurl: "" # Leave empty for username.github.io sites
-url: "https://njoki-muriithi.github.io"
+url: ""
 
 # Build Settings
 markdown: kramdown
