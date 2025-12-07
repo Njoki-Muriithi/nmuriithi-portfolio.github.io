@@ -97,17 +97,19 @@
 	window.sr = new scrollReveal();
 	
 
-	// Menu Dropdown Toggle
+	// Menu Dropdown Toggle with ARIA support
 	if($('.menu-trigger').length){
 		$(".menu-trigger").on('click', function() {	
 			$(this).toggleClass('active');
+			var expanded = $(this).attr('aria-expanded') === 'true';
+			$(this).attr('aria-expanded', !expanded);
 			$('.header-area .nav').slideToggle(200);
 		});
 	}
 
 
-	// Menu elevator animation
-	$('a[href*=\\#]:not([href=\\#])').on('click', function() {
+	// Menu elevator animation - exclude skip-link
+	$('a[href*=\\#]:not([href=\\#]):not(.skip-link)').on('click', function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 			var target = $(this.hash);
 			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -115,6 +117,7 @@
 				var width = $(window).width();
 				if(width < 991) {
 					$('.menu-trigger').removeClass('active');
+					$('.menu-trigger').attr('aria-expanded', 'false');
 					$('.header-area .nav').slideUp(200);	
 				}				
 				$('html,body').animate({
@@ -128,8 +131,8 @@
 	$(document).ready(function () {
 	    $(document).on("scroll", onScroll);
 	    
-	    //smoothscroll
-	    $('a[href^="#"]').on('click', function (e) {
+	    //smoothscroll - exclude skip-link from this handler
+	    $('a[href^="#"]:not(.skip-link)').on('click', function (e) {
 	        e.preventDefault();
 	        $(document).off("scroll");
 	        
@@ -138,15 +141,16 @@
 	        })
 	        $(this).addClass('active');
 	      
-	        var target = this.hash,
-	        menu = target;
-	       	var target = $(this.hash);
-	        $('html, body').stop().animate({
-	            scrollTop: (target.offset().top) - 79
-	        }, 500, 'swing', function () {
-	            window.location.hash = target;
-	            $(document).on("scroll", onScroll);
-	        });
+	        var hash = this.hash;
+	        var $target = $(hash);
+	        if ($target.length) {
+	            $('html, body').stop().animate({
+	                scrollTop: ($target.offset().top) - 79
+	            }, 500, 'swing', function () {
+	                window.location.hash = hash;
+	                $(document).on("scroll", onScroll);
+	            });
+	        }
 	    });
 	});
 

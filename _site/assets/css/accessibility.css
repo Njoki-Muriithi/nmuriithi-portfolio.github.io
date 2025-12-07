@@ -1,0 +1,190 @@
+/*
+ * Accessibility Enhancements
+ * WCAG 2.1 Compliance Styles
+ */
+
+/* -----------------------------------------
+   Skip Link for Keyboard Navigation
+----------------------------------------- */
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #9FA8DA;
+    color: #fff;
+    padding: 12px 24px;
+    z-index: 10001;
+    border-radius: 0 0 8px 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid #FFD54F;
+    outline-offset: 2px;
+}
+
+/* -----------------------------------------
+   Focus States - Visible for All Users
+----------------------------------------- */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+    outline: 3px solid #FFD54F;
+    outline-offset: 2px;
+}
+
+/* Custom focus for specific elements */
+.nav a:focus,
+.logo:focus {
+    outline: 3px solid #FFD54F;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.menu-trigger:focus {
+    outline: 3px solid #FFD54F;
+    outline-offset: 2px;
+}
+
+.nav-btn:focus,
+.floating-info-btn:focus,
+.close-overlay:focus {
+    outline: 3px solid #FFD54F;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(255, 213, 79, 0.3);
+}
+
+/* Button-style menu trigger reset (converted from anchor) */
+button.menu-trigger {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Remove default focus outline where custom is applied */
+.skip-link:focus-visible,
+.nav a:focus-visible,
+.nav-btn:focus-visible {
+    outline: 3px solid #FFD54F;
+    outline-offset: 2px;
+}
+
+/* -----------------------------------------
+   Reduced Motion Support
+----------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .skip-link {
+        transition: none;
+    }
+    
+    /* Disable parallax effects */
+    .parallax {
+        background-attachment: scroll !important;
+    }
+}
+
+/* -----------------------------------------
+   High Contrast Mode Support
+----------------------------------------- */
+@media (prefers-contrast: high) {
+    .skip-link {
+        background: #000;
+        color: #fff;
+        border: 2px solid #fff;
+    }
+    
+    a:focus,
+    button:focus {
+        outline: 3px solid #000;
+        outline-offset: 2px;
+    }
+}
+
+/* -----------------------------------------
+   Screen Reader Only Text
+----------------------------------------- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* -----------------------------------------
+   Improved Link Visibility
+----------------------------------------- */
+a:hover {
+    text-decoration: underline;
+}
+
+/* Ensure sufficient color contrast for links */
+.left-text-content a,
+.right-text-content a {
+    text-decoration: underline;
+}
+
+/* -----------------------------------------
+   Form Accessibility
+----------------------------------------- */
+input:invalid,
+textarea:invalid,
+select:invalid {
+    border-color: #d32f2f;
+}
+
+input:invalid:focus,
+textarea:invalid:focus {
+    outline-color: #d32f2f;
+}
+
+/* Error message styling */
+.error-message {
+    color: #d32f2f;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* -----------------------------------------
+   Touch Target Sizes (minimum 44x44px)
+----------------------------------------- */
+@media (pointer: coarse) {
+    .nav-btn,
+    .floating-info-btn,
+    .close-overlay,
+    .social-icons a {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}

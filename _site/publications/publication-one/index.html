@@ -12,34 +12,52 @@
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
 <!-- CSS Files -->
-<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.css">
-<link rel="stylesheet" href="/assets/css/templatemo-breezed.css">
-<link rel="stylesheet" href="/assets/css/owl-carousel.css">
-<link rel="stylesheet" href="/assets/css/lightbox.css">
+<link rel="stylesheet" type="text/css" href="/nmuriithi-portfolio.github.io/assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/nmuriithi-portfolio.github.io/assets/css/font-awesome.css">
+<link rel="stylesheet" href="/nmuriithi-portfolio.github.io/assets/css/templatemo-breezed.css">
+<link rel="stylesheet" href="/nmuriithi-portfolio.github.io/assets/css/owl-carousel.css">
+<link rel="stylesheet" href="/nmuriithi-portfolio.github.io/assets/css/lightbox.css">
+<link rel="stylesheet" href="/nmuriithi-portfolio.github.io/assets/css/accessibility.css">
 
 
 
 
-<link rel="stylesheet" href="/assets/css/project-page.css">
+<link rel="stylesheet" href="/nmuriithi-portfolio.github.io/assets/css/project-page.css">
 
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://localhost:4000/publications/publication-one/">
+<meta property="og:url" content="http://localhost:4000/nmuriithi-portfolio.github.io/publications/publication-one/">
 <meta property="og:title" content="Research on Machine Learning in Healthcare | Njoki Muriithi Portfolio">
 <meta property="og:description" content="A comprehensive research publication exploring the applications of machine learning algorithms in healthcare diagnostics and patient outcome prediction.">
-<meta property="og:image" content="http://localhost:4000/assets/images/slide-01.jpg">
+<meta property="og:image" content="http://localhost:4000/nmuriithi-portfolio.github.io/assets/images/slide-01.jpg">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="http://localhost:4000/publications/publication-one/">
+<meta name="twitter:url" content="http://localhost:4000/nmuriithi-portfolio.github.io/publications/publication-one/">
 <meta name="twitter:title" content="Research on Machine Learning in Healthcare | Njoki Muriithi Portfolio">
 <meta name="twitter:description" content="A comprehensive research publication exploring the applications of machine learning algorithms in healthcare diagnostics and patient outcome prediction.">
-<meta name="twitter:image" content="http://localhost:4000/assets/images/slide-01.jpg">
+<meta name="twitter:image" content="http://localhost:4000/nmuriithi-portfolio.github.io/assets/images/slide-01.jpg">
 
 <!-- Canonical URL -->
-<link rel="canonical" href="http://localhost:4000/publications/publication-one/">
+<link rel="canonical" href="http://localhost:4000/nmuriithi-portfolio.github.io/publications/publication-one/">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    
+    "name": "Research on Machine Learning in Healthcare",
+    "description": "A comprehensive research publication exploring the applications of machine learning algorithms in healthcare diagnostics and patient outcome prediction.",
+    "author": {
+        "@type": "Person",
+        "name": "Njoki Muriithi"
+    },
+    "url": "http://localhost:4000/nmuriithi-portfolio.github.io/publications/publication-one/"
+    
+}
+</script>
 
 
 
@@ -47,9 +65,12 @@
 
 <body>
 
+<!-- Skip Navigation Link for Accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <!-- ***** Preloader Start ***** -->
-<div id="preloader">
-    <div class="jumper">
+<div id="preloader" role="status" aria-live="polite" aria-label="Loading page content">
+    <div class="jumper" aria-hidden="true">
         <div></div>
         <div></div>
         <div></div>
@@ -63,24 +84,24 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <nav class="main-nav">
+                <nav class="main-nav" aria-label="Main navigation">
                     <!-- ***** Logo Start ***** -->
-                    <a href="/" class="logo">
+                    <a href="/nmuriithi-portfolio.github.io/" class="logo">
                         N.NMURIITHI
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
+                    <ul class="nav" id="main-nav-list" role="menubar">
                         
                         
                         <li>
-                            <a href="/#top">Home</a>
+                            <a href="/nmuriithi-portfolio.github.io/#top">Home</a>
                         </li>
                         
                         
                         
                         <li>
-                            <a href="/about/">About Me</a>
+                            <a href="/nmuriithi-portfolio.github.io/about/">About Me</a>
                         </li>
                         
                         
@@ -89,9 +110,9 @@
                             <a href="javascript:;" aria-haspopup="true" aria-expanded="false">Projects</a>
                             <ul>
                                 
-                                <li><a href="/projects/project-one/">Project 1</a></li>
+                                <li><a href="/nmuriithi-portfolio.github.io/projects/project-one/">Project 1</a></li>
                                 
-                                <li><a href="/projects/project-two/">Project 2</a></li>
+                                <li><a href="/nmuriithi-portfolio.github.io/projects/project-two/">Project 2</a></li>
                                 
                             </ul>
                         </li>
@@ -102,7 +123,7 @@
                             <a href="javascript:;" aria-haspopup="true" aria-expanded="false">Publications</a>
                             <ul>
                                 
-                                <li><a href="/publications/publication-one/" class="active">Publication 1</a></li>
+                                <li><a href="/nmuriithi-portfolio.github.io/publications/publication-one/" class="active">Publication 1</a></li>
                                 
                             </ul>
                         </li>
@@ -110,14 +131,17 @@
                         
                         
                         <li>
-                            <a href="/contact/">Contact Me</a>
+                            <a href="/nmuriithi-portfolio.github.io/contact/">Contact Me</a>
                         </li>
                         
                         
                     </ul>        
-                    <a class='menu-trigger'>
+                    <button class="menu-trigger" 
+                            aria-expanded="false" 
+                            aria-controls="main-nav-list"
+                            aria-label="Toggle navigation menu">
                         <span>Menu</span>
-                    </a>
+                    </button>
                     <!-- ***** Menu End ***** -->
                 </nav>
             </div>
@@ -127,6 +151,7 @@
 <!-- ***** Header Area End ***** -->
 
 
+<main id="main-content">
 <!-- ***** Project Hero Section Start ***** -->
 <section class="project-hero" id="top">
     <div class="container-fluid">
@@ -136,7 +161,7 @@
                 
                 <section class="image-section" id="image-1">
                     <div class="image-container">
-                        <img src="/assets/images/slide-01.jpg" alt="Research Methodology">
+                        <img src="/nmuriithi-portfolio.github.io/assets/images/slide-01.jpg" alt="Research Methodology">
                         <div class="image-caption">
                             <h4>Research Methodology</h4>
                             <p>Overview of the research methodology and data collection process.</p>
@@ -146,7 +171,7 @@
                 
                 <section class="image-section" id="image-2">
                     <div class="image-container">
-                        <img src="/assets/images/slide-01.jpg" alt="Data Analysis">
+                        <img src="/nmuriithi-portfolio.github.io/assets/images/slide-01.jpg" alt="Data Analysis">
                         <div class="image-caption">
                             <h4>Data Analysis</h4>
                             <p>Comprehensive data analysis and visualization of key findings.</p>
@@ -156,7 +181,7 @@
                 
                 <section class="image-section" id="image-3">
                     <div class="image-container">
-                        <img src="/assets/images/slide-01.jpg" alt="Results & Conclusions">
+                        <img src="/nmuriithi-portfolio.github.io/assets/images/slide-01.jpg" alt="Results & Conclusions">
                         <div class="image-caption">
                             <h4>Results & Conclusions</h4>
                             <p>Summary of research results and implications for healthcare industry.</p>
@@ -195,23 +220,23 @@
                     
                     <div class="project-links">
                         
-                        <a href="#" target="_blank"><i class="fa fa-external-link"></i> Live Demo</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa fa-external-link" aria-hidden="true"></i> Live Demo</a>
                         
                         
-                        <a href="#" target="_blank"><i class="fa fa-github"></i> View Code</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa fa-github" aria-hidden="true"></i> View Code</a>
                         
                     </div>
                     
                     
                     <div class="image-navigation">
                         <h5>Jump to Section</h5>
-                        <div class="nav-buttons">
+                        <div class="nav-buttons" role="group" aria-label="Image navigation">
                             
-                            <button class="nav-btn" onclick="scrollToImage(1)">1</button>
+                            <button class="nav-btn" onclick="scrollToImage(1)" aria-label="Go to image 1">1</button>
                             
-                            <button class="nav-btn" onclick="scrollToImage(2)">2</button>
+                            <button class="nav-btn" onclick="scrollToImage(2)" aria-label="Go to image 2">2</button>
                             
-                            <button class="nav-btn" onclick="scrollToImage(3)">3</button>
+                            <button class="nav-btn" onclick="scrollToImage(3)" aria-label="Go to image 3">3</button>
                             
                         </div>
                     </div>
@@ -224,15 +249,15 @@
 <!-- ***** Project Hero Section End ***** -->
 
 <!-- Floating Info Button -->
-<button class="floating-info-btn" id="floatingBtn" onclick="toggleInfoOverlay()" aria-label="Show project info">
-    <i class="fa fa-info"></i>
+<button class="floating-info-btn" id="floatingBtn" onclick="toggleInfoOverlay()" aria-label="Show project info" aria-expanded="false" aria-controls="infoOverlay">
+    <i class="fa fa-info" aria-hidden="true"></i>
 </button>
 
 <!-- Info Overlay Panel -->
-<div class="info-overlay-backdrop" id="overlayBackdrop" onclick="toggleInfoOverlay()"></div>
-<div class="info-overlay" id="infoOverlay">
+<div class="info-overlay-backdrop" id="overlayBackdrop" onclick="toggleInfoOverlay()" aria-hidden="true"></div>
+<div class="info-overlay" id="infoOverlay" role="dialog" aria-modal="true" aria-label="Project information">
     <button class="close-overlay" onclick="toggleInfoOverlay()" aria-label="Close panel">
-        <i class="fa fa-times"></i>
+        <i class="fa fa-times" aria-hidden="true"></i>
     </button>
     <div id="overlayContent">
         <!-- Content cloned from sidebar via JavaScript -->
@@ -252,6 +277,7 @@
 </ul>
 
 
+</main>
 
 <!-- ***** Footer Start ***** -->
 <footer>
@@ -268,9 +294,9 @@
                     <ul id="social-section" class="social-icons">
                         <li><p>My Socials</p></li>
                         
-                        <li><a rel="nofollow" href="https://www.linkedin.com/in/njoki-muriithi-1869451bb/" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a rel="nofollow noopener noreferrer" href="https://www.linkedin.com/in/njoki-muriithi-1869451bb/" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                         
-                        <li><a rel="nofollow" href="https://github.com/Njoki-Muriithi" target="_blank" aria-label="GitHub"><i class="fa fa-github"></i></a></li>
+                        <li><a rel="nofollow noopener noreferrer" href="https://github.com/Njoki-Muriithi" target="_blank" aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
                         
                     </ul>
                 </div>
@@ -282,31 +308,31 @@
 
 
 <!-- jQuery 3.x -->
-<script src="/assets/js/jquery-3.7.1.min.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/jquery-3.7.1.min.js"></script>
 <!-- jQuery Migrate for backward compatibility with older plugins -->
 <script src="https://code.jquery.com/jquery-migrate-3.4.1.min.js"></script>
 
 <!-- Bootstrap -->
-<script src="/assets/js/popper.js"></script>
-<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/popper.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/bootstrap.min.js"></script>
 
 <!-- Plugins -->
-<script src="/assets/js/owl-carousel.js"></script>
-<script src="/assets/js/scrollreveal.min.js"></script>
-<script src="/assets/js/waypoints.min.js"></script>
-<script src="/assets/js/jquery.counterup.min.js"></script>
-<script src="/assets/js/imgfix.min.js"></script> 
-<script src="/assets/js/slick.js"></script> 
-<script src="/assets/js/lightbox.js"></script> 
-<script src="/assets/js/isotope.js"></script> 
+<script src="/nmuriithi-portfolio.github.io/assets/js/owl-carousel.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/scrollreveal.min.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/waypoints.min.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/jquery.counterup.min.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/imgfix.min.js"></script> 
+<script src="/nmuriithi-portfolio.github.io/assets/js/slick.js"></script> 
+<script src="/nmuriithi-portfolio.github.io/assets/js/lightbox.js"></script> 
+<script src="/nmuriithi-portfolio.github.io/assets/js/isotope.js"></script> 
 
 <!-- Global Init -->
-<script src="/assets/js/custom.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/custom.js"></script>
 
 
 
 
-<script src="/assets/js/project-page.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/project-page.js"></script>
 
 
 

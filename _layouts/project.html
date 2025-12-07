@@ -45,19 +45,19 @@ extra_js: project-page.js
                     
                     <div class="project-links">
                         {% if page.demo_url %}
-                        <a href="{{ page.demo_url }}" target="_blank"><i class="fa fa-external-link"></i> Live Demo</a>
+                        <a href="{{ page.demo_url }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-external-link" aria-hidden="true"></i> Live Demo</a>
                         {% endif %}
                         {% if page.github_url %}
-                        <a href="{{ page.github_url }}" target="_blank"><i class="fa fa-github"></i> View Code</a>
+                        <a href="{{ page.github_url }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-github" aria-hidden="true"></i> View Code</a>
                         {% endif %}
                     </div>
                     
                     {% if page.images.size > 1 %}
                     <div class="image-navigation">
                         <h5>Jump to Section</h5>
-                        <div class="nav-buttons">
+                        <div class="nav-buttons" role="group" aria-label="Image navigation">
                             {% for image in page.images %}
-                            <button class="nav-btn" onclick="scrollToImage({{ forloop.index }})">{{ forloop.index }}</button>
+                            <button class="nav-btn" onclick="scrollToImage({{ forloop.index }})" aria-label="Go to image {{ forloop.index }}">{{ forloop.index }}</button>
                             {% endfor %}
                         </div>
                     </div>
@@ -70,15 +70,15 @@ extra_js: project-page.js
 <!-- ***** Project Hero Section End ***** -->
 
 <!-- Floating Info Button -->
-<button class="floating-info-btn" id="floatingBtn" onclick="toggleInfoOverlay()" aria-label="Show project info">
-    <i class="fa fa-info"></i>
+<button class="floating-info-btn" id="floatingBtn" onclick="toggleInfoOverlay()" aria-label="Show project info" aria-expanded="false" aria-controls="infoOverlay">
+    <i class="fa fa-info" aria-hidden="true"></i>
 </button>
 
 <!-- Info Overlay Panel -->
-<div class="info-overlay-backdrop" id="overlayBackdrop" onclick="toggleInfoOverlay()"></div>
-<div class="info-overlay" id="infoOverlay">
+<div class="info-overlay-backdrop" id="overlayBackdrop" onclick="toggleInfoOverlay()" aria-hidden="true"></div>
+<div class="info-overlay" id="infoOverlay" role="dialog" aria-modal="true" aria-label="Project information">
     <button class="close-overlay" onclick="toggleInfoOverlay()" aria-label="Close panel">
-        <i class="fa fa-times"></i>
+        <i class="fa fa-times" aria-hidden="true"></i>
     </button>
     <div id="overlayContent">
         <!-- Content cloned from sidebar via JavaScript -->

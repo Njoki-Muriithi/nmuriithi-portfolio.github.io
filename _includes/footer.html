@@ -13,7 +13,7 @@
                     <ul id="social-section" class="social-icons">
                         <li><p>My Socials</p></li>
                         {% for social in site.data.social %}
-                        <li><a rel="nofollow" href="{{ social.url }}" target="_blank" aria-label="{{ social.name }}"><i class="fa {{ social.icon }}"></i></a></li>
+                        <li><a rel="nofollow noopener noreferrer" href="{{ social.url }}" target="_blank" aria-label="{{ social.name }}"><i class="fa {{ social.icon }}" aria-hidden="true"></i></a></li>
                         {% endfor %}
                     </ul>
                 </div>

@@ -14,3 +14,31 @@
 
 <!-- Canonical URL -->
 <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "{% if page.layout == 'project' %}CreativeWork{% else %}ProfilePage{% endif %}",
+    {% if page.layout == 'project' %}
+    "name": "{{ page.title }}",
+    "description": "{{ page.description | default: site.description | escape }}",
+    "author": {
+        "@type": "Person",
+        "name": "{{ site.author }}"
+    },
+    "url": "{{ page.url | absolute_url }}"
+    {% else %}
+    "mainEntity": {
+        "@type": "Person",
+        "name": "{{ site.author }}",
+        "url": "{{ site.url }}{{ site.baseurl }}/",
+        "jobTitle": "Developer and Creative Professional",
+        "sameAs": [
+            {% for social in site.data.social %}"{{ social.url }}"{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+        ]
+    }
+    {% endif %}
+}
+</script>

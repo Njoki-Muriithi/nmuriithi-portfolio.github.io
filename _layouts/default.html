@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 <head>
 {% include head.html %}
 {% if page.header_style == 'solid' %}
@@ -25,11 +25,16 @@
 
 <body>
 
+<!-- Skip Navigation Link for Accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 {% include preloader.html %}
 
 {% include header.html %}
 
+<main id="main-content">
 {{ content }}
+</main>
 
 {% include footer.html %}
 

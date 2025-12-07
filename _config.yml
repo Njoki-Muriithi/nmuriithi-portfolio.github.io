@@ -5,6 +5,7 @@ author: "Njoki Muriithi"
 email: "contact@nmuriithi.com"
 baseurl: "/nmuriithi-portfolio.github.io" # Repository name for GitHub Pages project sites
 url: "https://njoki-muriithi.github.io"
+lang: "en"
 
 # Build Settings
 markdown: kramdown

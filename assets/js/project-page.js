@@ -24,6 +24,23 @@ $(document).ready(function() {
             toggleInfoOverlay();
         }
     });
+    
+    // Trap focus inside overlay when open (accessibility)
+    $('#infoOverlay').on('keydown', function(e) {
+        if (e.key === 'Tab') {
+            var focusable = $(this).find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            var first = focusable.first();
+            var last = focusable.last();
+            
+            if (e.shiftKey && document.activeElement === first[0]) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last[0]) {
+                e.preventDefault();
+                first.focus();
+            }
+        }
+    });
 });
 
 // Smooth scroll for navigation buttons
@@ -38,13 +55,25 @@ function scrollToImage(imageNumber) {
 
 // Toggle info overlay panel
 function toggleInfoOverlay() {
+    var isOpening = !$('#infoOverlay').hasClass('active');
+    
     $('#infoOverlay').toggleClass('active');
     $('#overlayBackdrop').toggleClass('active');
     
+    // Update ARIA states
+    $('#floatingBtn').attr('aria-expanded', isOpening);
+    $('#overlayBackdrop').attr('aria-hidden', !isOpening);
+    
     // Prevent body scroll when overlay is open
-    if ($('#infoOverlay').hasClass('active')) {
+    if (isOpening) {
         $('body').css('overflow', 'hidden');
+        // Focus the close button when opening
+        setTimeout(function() {
+            $('.close-overlay').focus();
+        }, 100);
     } else {
         $('body').css('overflow', 'auto');
+        // Return focus to the floating button
+        $('#floatingBtn').focus();
     }
 }

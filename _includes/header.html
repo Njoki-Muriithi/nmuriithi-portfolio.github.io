@@ -3,14 +3,14 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <nav class="main-nav">
+                <nav class="main-nav" aria-label="Main navigation">
                     <!-- ***** Logo Start ***** -->
                     <a href="{{ site.baseurl }}/" class="logo">
                         N.NMURIITHI
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
+                    <ul class="nav" id="main-nav-list" role="menubar">
                         {% for item in site.data.navigation.main %}
                         {% if item.submenu %}
                         <li class="submenu">
@@ -28,9 +28,12 @@
                         {% endif %}
                         {% endfor %}
                     </ul>        
-                    <a class='menu-trigger'>
+                    <button class="menu-trigger" 
+                            aria-expanded="false" 
+                            aria-controls="main-nav-list"
+                            aria-label="Toggle navigation menu">
                         <span>Menu</span>
-                    </a>
+                    </button>
                     <!-- ***** Menu End ***** -->
                 </nav>
             </div>

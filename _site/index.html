@@ -12,11 +12,12 @@
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
 <!-- CSS Files -->
-<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.css">
-<link rel="stylesheet" href="/assets/css/templatemo-breezed.css">
-<link rel="stylesheet" href="/assets/css/owl-carousel.css">
-<link rel="stylesheet" href="/assets/css/lightbox.css">
+<link rel="stylesheet" type="text/css" href="/nmuriithi-portfolio.github.io/assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/nmuriithi-portfolio.github.io/assets/css/font-awesome.css">
+<link rel="stylesheet" href="/nmuriithi-portfolio.github.io/assets/css/templatemo-breezed.css">
+<link rel="stylesheet" href="/nmuriithi-portfolio.github.io/assets/css/owl-carousel.css">
+<link rel="stylesheet" href="/nmuriithi-portfolio.github.io/assets/css/lightbox.css">
+<link rel="stylesheet" href="/nmuriithi-portfolio.github.io/assets/css/accessibility.css">
 
 
 
@@ -24,20 +25,41 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:url" content="http://localhost:4000/nmuriithi-portfolio.github.io/">
 <meta property="og:title" content="Home | Njoki Muriithi Portfolio">
 <meta property="og:description" content="Portfolio of Njoki Muriithi - Developer and Creative Professional. Explore my projects, publications, and get in touch.">
-<meta property="og:image" content="http://localhost:4000/assets/images/slide-01.jpg">
+<meta property="og:image" content="http://localhost:4000/nmuriithi-portfolio.github.io/assets/images/slide-01.jpg">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="http://localhost:4000/">
+<meta name="twitter:url" content="http://localhost:4000/nmuriithi-portfolio.github.io/">
 <meta name="twitter:title" content="Home | Njoki Muriithi Portfolio">
 <meta name="twitter:description" content="Portfolio of Njoki Muriithi - Developer and Creative Professional. Explore my projects, publications, and get in touch.">
-<meta name="twitter:image" content="http://localhost:4000/assets/images/slide-01.jpg">
+<meta name="twitter:image" content="http://localhost:4000/nmuriithi-portfolio.github.io/assets/images/slide-01.jpg">
 
 <!-- Canonical URL -->
-<link rel="canonical" href="http://localhost:4000/">
+<link rel="canonical" href="http://localhost:4000/nmuriithi-portfolio.github.io/">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    
+    "mainEntity": {
+        "@type": "Person",
+        "name": "Njoki Muriithi",
+        "url": "http://localhost:4000/nmuriithi-portfolio.github.io/",
+        "jobTitle": "Developer and Creative Professional",
+        "sameAs": [
+            "https://www.linkedin.com/in/njoki-muriithi-1869451bb/",
+            "https://github.com/Njoki-Muriithi"
+            
+        ]
+    }
+    
+}
+</script>
 
 
 
@@ -45,9 +67,12 @@
 
 <body>
 
+<!-- Skip Navigation Link for Accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <!-- ***** Preloader Start ***** -->
-<div id="preloader">
-    <div class="jumper">
+<div id="preloader" role="status" aria-live="polite" aria-label="Loading page content">
+    <div class="jumper" aria-hidden="true">
         <div></div>
         <div></div>
         <div></div>
@@ -61,24 +86,24 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <nav class="main-nav">
+                <nav class="main-nav" aria-label="Main navigation">
                     <!-- ***** Logo Start ***** -->
-                    <a href="/" class="logo">
+                    <a href="/nmuriithi-portfolio.github.io/" class="logo">
                         N.NMURIITHI
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
+                    <ul class="nav" id="main-nav-list" role="menubar">
                         
                         
                         <li class="scroll-to-section">
-                            <a href="/#top" class="active">Home</a>
+                            <a href="/nmuriithi-portfolio.github.io/#top" class="active">Home</a>
                         </li>
                         
                         
                         
                         <li>
-                            <a href="/about/">About Me</a>
+                            <a href="/nmuriithi-portfolio.github.io/about/">About Me</a>
                         </li>
                         
                         
@@ -87,9 +112,9 @@
                             <a href="javascript:;" aria-haspopup="true" aria-expanded="false">Projects</a>
                             <ul>
                                 
-                                <li><a href="/projects/project-one/">Project 1</a></li>
+                                <li><a href="/nmuriithi-portfolio.github.io/projects/project-one/">Project 1</a></li>
                                 
-                                <li><a href="/projects/project-two/">Project 2</a></li>
+                                <li><a href="/nmuriithi-portfolio.github.io/projects/project-two/">Project 2</a></li>
                                 
                             </ul>
                         </li>
@@ -100,7 +125,7 @@
                             <a href="javascript:;" aria-haspopup="true" aria-expanded="false">Publications</a>
                             <ul>
                                 
-                                <li><a href="/publications/publication-one/">Publication 1</a></li>
+                                <li><a href="/nmuriithi-portfolio.github.io/publications/publication-one/">Publication 1</a></li>
                                 
                             </ul>
                         </li>
@@ -108,14 +133,17 @@
                         
                         
                         <li>
-                            <a href="/contact/">Contact Me</a>
+                            <a href="/nmuriithi-portfolio.github.io/contact/">Contact Me</a>
                         </li>
                         
                         
                     </ul>        
-                    <a class='menu-trigger'>
+                    <button class="menu-trigger" 
+                            aria-expanded="false" 
+                            aria-controls="main-nav-list"
+                            aria-label="Toggle navigation menu">
                         <span>Menu</span>
-                    </a>
+                    </button>
                     <!-- ***** Menu End ***** -->
                 </nav>
             </div>
@@ -125,17 +153,18 @@
 <!-- ***** Header Area End ***** -->
 
 
+<main id="main-content">
 <!-- ***** Main Banner Area Start ***** -->
 <div class="main-banner header-text" id="top">
     <div class="Modern-Slider">
       <!-- Item -->
       <div class="item">
         <div class="img-fill">
-            <img src="/assets/images/slide-01.jpg" alt="Portfolio hero image">
+            <img src="/nmuriithi-portfolio.github.io/assets/images/colored_pic.JPG" alt="Portfolio hero image">
             <div class="text-content">
               <h3>Welcome To My Portfolio</h3>
               <h5>Feel Free To Explore</h5>
-              <a href="/about/" class="main-stroked-button">About Me</a>
+              <a href="/nmuriithi-portfolio.github.io/about/" class="main-stroked-button">About Me</a>
             </div>
         </div>
       </div>
@@ -163,6 +192,7 @@
     });
 </script>
 
+</main>
 
 <!-- ***** Footer Start ***** -->
 <footer>
@@ -179,9 +209,9 @@
                     <ul id="social-section" class="social-icons">
                         <li><p>My Socials</p></li>
                         
-                        <li><a rel="nofollow" href="https://www.linkedin.com/in/njoki-muriithi-1869451bb/" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a rel="nofollow noopener noreferrer" href="https://www.linkedin.com/in/njoki-muriithi-1869451bb/" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                         
-                        <li><a rel="nofollow" href="https://github.com/Njoki-Muriithi" target="_blank" aria-label="GitHub"><i class="fa fa-github"></i></a></li>
+                        <li><a rel="nofollow noopener noreferrer" href="https://github.com/Njoki-Muriithi" target="_blank" aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
                         
                     </ul>
                 </div>
@@ -193,26 +223,26 @@
 
 
 <!-- jQuery 3.x -->
-<script src="/assets/js/jquery-3.7.1.min.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/jquery-3.7.1.min.js"></script>
 <!-- jQuery Migrate for backward compatibility with older plugins -->
 <script src="https://code.jquery.com/jquery-migrate-3.4.1.min.js"></script>
 
 <!-- Bootstrap -->
-<script src="/assets/js/popper.js"></script>
-<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/popper.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/bootstrap.min.js"></script>
 
 <!-- Plugins -->
-<script src="/assets/js/owl-carousel.js"></script>
-<script src="/assets/js/scrollreveal.min.js"></script>
-<script src="/assets/js/waypoints.min.js"></script>
-<script src="/assets/js/jquery.counterup.min.js"></script>
-<script src="/assets/js/imgfix.min.js"></script> 
-<script src="/assets/js/slick.js"></script> 
-<script src="/assets/js/lightbox.js"></script> 
-<script src="/assets/js/isotope.js"></script> 
+<script src="/nmuriithi-portfolio.github.io/assets/js/owl-carousel.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/scrollreveal.min.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/waypoints.min.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/jquery.counterup.min.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/imgfix.min.js"></script> 
+<script src="/nmuriithi-portfolio.github.io/assets/js/slick.js"></script> 
+<script src="/nmuriithi-portfolio.github.io/assets/js/lightbox.js"></script> 
+<script src="/nmuriithi-portfolio.github.io/assets/js/isotope.js"></script> 
 
 <!-- Global Init -->
-<script src="/assets/js/custom.js"></script>
+<script src="/nmuriithi-portfolio.github.io/assets/js/custom.js"></script>
 
 
 
