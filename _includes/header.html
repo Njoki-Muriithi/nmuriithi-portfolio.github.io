@@ -1,0 +1,40 @@
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky{% if page.header_style == 'solid' %} header-solid{% endif %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="{{ site.baseurl }}/" class="logo">
+                        N.NMURIITHI
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        {% for item in site.data.navigation.main %}
+                        {% if item.submenu %}
+                        <li class="submenu">
+                            <a href="javascript:;" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
+                            <ul>
+                                {% for subitem in item.submenu %}
+                                <li><a href="{{ site.baseurl }}{{ subitem.url }}"{% if page.url == subitem.url %} class="active"{% endif %}>{{ subitem.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        {% else %}
+                        <li{% if page.url == '/' and item.url == '/' %} class="scroll-to-section"{% endif %}>
+                            <a href="{{ site.baseurl }}{{ item.url }}{% if item.url == '/' %}#top{% endif %}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>        
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ***** Header Area End ***** -->

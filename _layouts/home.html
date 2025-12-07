@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<!-- ***** Main Banner Area Start ***** -->
+<div class="main-banner header-text" id="top">
+    <div class="Modern-Slider">
+      <!-- Item -->
+      <div class="item">
+        <div class="img-fill">
+            <img src="{{ site.baseurl }}/assets/images/slide-01.jpg" alt="Portfolio hero image">
+            <div class="text-content">
+              <h3>{{ page.hero_title | default: "Welcome To My Portfolio" }}</h3>
+              <h5>{{ page.hero_subtitle | default: "Feel Free To Explore" }}</h5>
+              <a href="{{ site.baseurl }}/about/" class="main-stroked-button">About Me</a>
+            </div>
+        </div>
+      </div>
+      <!-- // Item -->
+    </div>
+</div>
+<div class="scroll-down scroll-to-section"><a href="#social-section"><i class="fa fa-arrow-down"></i></a></div>
+<!-- ***** Main Banner Area End ***** -->
+
+{{ content }}
+
+<script>
+    $(function() {
+        var selectedClass = "";
+        $("p").click(function(){
+        selectedClass = $(this).attr("data-rel");
+        $("#portfolio").fadeTo(50, 0.1);
+            $("#portfolio div").not("."+selectedClass).fadeOut();
+        setTimeout(function() {
+          $("."+selectedClass).fadeIn();
+          $("#portfolio").fadeTo(50, 1);
+        }, 500);
+            
+        });
+    });
+</script>

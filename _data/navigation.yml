@@ -1,0 +1,19 @@
+main:
+  - title: Home
+    url: /
+  - title: About Me
+    url: /about/
+  - title: Projects
+    url: /projects/
+    submenu:
+      - title: Project 1
+        url: /projects/project-one/
+      - title: Project 2
+        url: /projects/project-two/
+  - title: Publications
+    url: /publications/
+    submenu:
+      - title: Publication 1
+        url: /publications/publication-one/
+  - title: Contact Me
+    url: /contact/

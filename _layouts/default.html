@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include head.html %}
+{% if page.header_style == 'solid' %}
+<style>
+    /* Ensure header is always visible on inner pages */
+    .header-area.header-solid {
+        background-color: #9FA8DA !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .header-area.header-solid .main-nav .logo,
+    .header-area.header-solid .main-nav .nav li a {
+        color: #000000 !important;
+    }
+    
+    .header-area.header-solid .main-nav .nav li:hover a,
+    .header-area.header-solid .main-nav .nav li a.active {
+        color: #FFD54F !important;
+    }
+</style>
+{% endif %}
+</head>
+
+<body>
+
+{% include preloader.html %}
+
+{% include header.html %}
+
+{{ content }}
+
+{% include footer.html %}
+
+{% include scripts.html %}
+
+</body>
+</html>

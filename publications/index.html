@@ -1,0 +1,39 @@
+---
+layout: page
+title: Publications
+description: "Browse my research publications, articles, and academic work in technology and related fields."
+permalink: /publications/
+subtitle: Research & Writing
+heading: Publications
+---
+
+<div class="row">
+    {% for publication in site.publications %}
+    <div class="col-lg-6 col-md-6 col-xs-12" style="margin-bottom: 30px;">
+        <div class="publication-card" style="background: #fff; border-radius: 5px; box-shadow: 0 0 15px rgba(0,0,0,0.1); overflow: hidden;">
+            {% if publication.images.first %}
+            <a href="{{ publication.url }}">
+                <img src="{{ site.baseurl }}{{ publication.images.first.src }}" alt="{{ publication.title }}" style="width: 100%; height: 200px; object-fit: cover;">
+            </a>
+            {% endif %}
+            <div style="padding: 25px;">
+                <span style="color: #9FA8DA; font-size: 12px; text-transform: uppercase; font-weight: 600;">{{ publication.category }}</span>
+                <h4 style="margin: 10px 0; font-weight: 600;">
+                    <a href="{{ publication.url }}" style="color: #1e1e1e; text-decoration: none;">{{ publication.title }}</a>
+                </h4>
+                <p style="color: #777; font-size: 14px; line-height: 22px;">{{ publication.description | truncate: 120 }}</p>
+                <p style="color: #999; font-size: 12px; margin-top: 10px;">
+                    <i class="fa fa-calendar"></i> {{ publication.date | date: "%B %Y" }}
+                </p>
+                <a href="{{ publication.url }}" style="display: inline-block; margin-top: 15px; color: #9FA8DA; font-weight: 600; text-decoration: none;">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% if site.publications.size == 0 %}
+<div class="col-lg-12 text-center">
+    <p style="color: #777;">Publications coming soon. Check back later!</p>
+</div>
+{% endif %}

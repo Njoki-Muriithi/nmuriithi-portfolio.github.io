@@ -1,0 +1,56 @@
+# Site Settings
+title: "Njoki Muriithi Portfolio"
+description: "Portfolio of Njoki Muriithi - Developer and Creative Professional"
+author: "Njoki Muriithi"
+email: "contact@nmuriithi.com"
+baseurl: "" # Leave empty for username.github.io sites
+url: "https://njoki-muriithi.github.io"
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Plugins (GitHub Pages supported)
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+  publications:
+    output: true
+    permalink: /publications/:name/
+
+# Default Front Matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
