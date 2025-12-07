@@ -3,8 +3,8 @@ title: "Njoki Muriithi Portfolio"
 description: "Portfolio of Njoki Muriithi - Developer and Creative Professional"
 author: "Njoki Muriithi"
 email: "contact@nmuriithi.com"
-baseurl: "" # Leave empty for username.github.io sites
-url: "/"
+baseurl: "/nmuriithi-portfolio.github.io" # Repository name for GitHub Pages project sites
+url: "https://njoki-muriithi.github.io"
 
 # Build Settings
 markdown: kramdown
