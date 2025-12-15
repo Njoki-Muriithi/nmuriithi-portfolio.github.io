@@ -1,14 +1,10 @@
 ---
-title: "E-Commerce Platform Redesign"
-description: "A comprehensive redesign of a modern e-commerce platform focusing on user experience, conversion optimization, and mobile-first design principles. The project included full UI/UX overhaul, frontend development, and performance optimization."
+title: "From Pixels to Protection"
+description: "From Pixels to Protection: Designing a Decision Tool to Support Mapping Conservation Priorities for The Haliburton Highlands Land Trust."
 category: "Web Development"
 date: 2024-01-15
 technologies:
-  - React
-  - Node.js
-  - MongoDB
-  - Tailwind CSS
-  - Stripe API
+  - WIP
 demo_url: "#"
 github_url: "#"
 images:

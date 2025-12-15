@@ -651,6 +651,11 @@ header
   color: #9FA8DA;
 }
 
+.author-name {
+  color: #ffffff!important;
+  letter-spacing: 4.5px!important;
+}
+
 @media (max-width: 1200px) {
   .header-area .main-nav .nav li {
     padding-left: 12px;

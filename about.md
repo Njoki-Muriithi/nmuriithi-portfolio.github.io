@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About Me
-description: "Learn more about Njoki Muriithi - a passionate developer and creative professional dedicated to building exceptional digital experiences."
+description: "Learn more about Njoki Muriithi - a passionate Environmental Professional in Training."
 permalink: /about/
 subtitle: About Me
 heading: Who I Am & What I Do
@@ -34,7 +34,7 @@ heading: Who I Am & What I Do
     </div>
 </div>
 
-<div class="row" style="margin-top: 60px;">
+<div class="row" style="margin: 60px 0px 60px 0px;">
     <div class="col-lg-12">
         <div class="section-heading">
             <h6>My Journey</h6>
