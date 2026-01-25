@@ -1,8 +1,13 @@
 ---
 title: "Mobile App Development"
 description: "A cross-platform mobile application built with React Native, featuring real-time data synchronization, push notifications, and offline capabilities."
-category: "Mobile Development"
 date: 2024-03-20
+categories:
+  - Mobile Development
+  - React Native
+  - Cross-Platform
+  - Firebase
+  - Full-Stack Development
 technologies:
   - React Native
   - Firebase
@@ -25,14 +30,3 @@ images:
     title: "Settings Interface"
     caption: "Comprehensive settings allowing users to customize their experience."
 ---
-
-## Project Overview
-
-This mobile application was designed to provide users with a seamless cross-platform experience, with focus on performance and usability.
-
-## Key Features
-
-- Real-time data synchronization
-- Push notifications
-- Offline-first architecture
-- Biometric authentication

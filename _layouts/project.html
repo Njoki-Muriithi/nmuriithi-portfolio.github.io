@@ -85,4 +85,23 @@ extra_js: project-page.js
     </div>
 </div>
 
+{% if page.categories and page.categories.size > 0 %}
+<!-- ***** Categories Section Start ***** -->
+<section class="project-categories-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Categories</h2>
+                <div class="categories-list">
+                    {% for category in page.categories %}
+                    <span class="category-tag">{{ category }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Categories Section End ***** -->
+{% endif %}
+
 {{ content }}

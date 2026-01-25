@@ -1,42 +1,39 @@
 ---
-title: "From Pixels to Protection"
-description: "From Pixels to Protection: Designing a Decision Tool to Support Mapping Conservation Priorities for The Haliburton Highlands Land Trust."
-category: "Web Development"
-date: 2024-01-15
+title: "From Pixels to Protection: GIS Decision Support Tool for Conservation Planning"
+description: "Developed a fully customizable GIS decision support tool for the Haliburton
+Highlands Land Trust to prioritize conservation areas within the Highlands Corridor initiative.
+The tool uses weighted overlay analysis to integrate remote sensing data, including NDVI
+change detection to identify vegetation degradation, allowing the land trust to dynamically adjust
+conservation priorities based on funding availability, stakeholder input, and changing
+environmental conditions. This tool is now actively used to prioritize land acquisition and
+stewardship efforts across Crown land, unceded territory, and private holdings connecting three
+provincial parks (Queen Elizabeth II Wildlands, Frost Centre, Silent Lake). Awarded the J.
+Emmett Duff Memorial Prize in Geography."
+date: April 2024 - May 2025
+categories:
+  - GIS Analysis
+  - onservation Planning
+  - Remote Sensing
+  - Community-Based Research
 technologies:
-  - WIP
+  - ArcGIS Pro, ModelBuilder, Python (ArcPy), Remote Sensing (NDVI analysis), ENVI
 demo_url: "#"
 github_url: "#"
 images:
-  - src: "/assets/images/slide-01.jpg"
-    alt: "Initial Design Concept"
-    title: "Initial Design Concept"
-    caption: "The wireframe and initial design mockups focusing on clean navigation and intuitive user flows."
-  - src: "/assets/images/slide-01.jpg"
+  - src: "/assets/images/capstoneProject/The_add_edit_form.jpeg"
+    alt: "The add/edit form"
+    title: "The add/edit form"
+    caption: ""
+  - src: "/assets/images/capstoneProject/IMG_0576.jpeg"
     alt: "Product Page Layout"
-    title: "Product Page Layout"
-    caption: "Refined product pages with enhanced imagery, detailed descriptions, and streamlined checkout flow."
-  - src: "/assets/images/slide-01.jpg"
+    title: ""
+    caption: ""
+  - src: "/assets/images/capstoneProject/Selecting_the_correct_map.jpeg"
     alt: "Mobile Responsive Design"
-    title: "Mobile Responsive Design"
-    caption: "Mobile-first approach ensuring seamless experience across all device sizes and orientations."
-  - src: "/assets/images/slide-01.jpg"
+    title: ""
+    caption: ""
+  - src: "/assets/images/capstoneProject/IMG_0577.jpeg"
     alt: "Dashboard & Analytics"
-    title: "Dashboard & Analytics"
-    caption: "Admin dashboard with real-time analytics, inventory management, and order tracking capabilities."
-  - src: "/assets/images/slide-01.jpg"
-    alt: "Final Implementation"
-    title: "Final Implementation"
-    caption: "The completed platform with full integration, payment processing, and performance optimization."
+    title: ""
+    caption: ""
 ---
-
-## Project Overview
-
-This project involved a complete redesign of an existing e-commerce platform, focusing on improving user experience, increasing conversion rates, and implementing modern design principles.
-
-## Key Achievements
-
-- **40% increase** in conversion rate
-- **60% reduction** in page load time
-- **Mobile traffic** increased by 35%
-- **Customer satisfaction** score improved to 4.8/5

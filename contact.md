@@ -7,20 +7,16 @@ subtitle: Get In Touch
 heading: Let's Work Together
 ---
 
-<div class="row">
+<div class="row" style="margin-bottom: 160px">
     <div class="col-lg-4 col-md-4 col-xs-12">
         <div class="left-text-content">
             <div class="section-heading">
-                <h6>Contact Info</h6>
-                <h2>Feel free to reach out!</h2>
             </div>
             <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!</p>
-            
+            &nbsp;
+            <h5>Contact Info:</h5>
+            <h6>Feel free to reach out!</h6>
             <ul class="contact-info" style="list-style: none; padding: 0; margin-top: 30px;">
-                <li style="margin-bottom: 15px;">
-                    <i class="fa fa-envelope" style="color: #9FA8DA; margin-right: 10px;"></i>
-                    <a href="mailto:contact@nmuriithi.com">contact@nmuriithi.com</a>
-                </li>
                 <li style="margin-bottom: 15px;">
                     <i class="fa fa-linkedin" style="color: #9FA8DA; margin-right: 10px;"></i>
                     <a href="https://www.linkedin.com/in/njoki-muriithi-1869451bb/" target="_blank">LinkedIn Profile</a>
