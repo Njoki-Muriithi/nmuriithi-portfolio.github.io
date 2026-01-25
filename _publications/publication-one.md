@@ -1,4 +1,5 @@
 ---
+menu_label: Publication 1
 title: "Research on Machine Learning in Healthcare"
 description: "A comprehensive research publication exploring the applications of machine learning algorithms in healthcare diagnostics and patient outcome prediction."
 category: "Research Publication"

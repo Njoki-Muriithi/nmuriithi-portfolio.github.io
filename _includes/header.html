@@ -21,6 +21,24 @@
                                 {% endfor %}
                             </ul>
                         </li>
+                        {% elsif item.auto_collection == 'projects' %}
+                        <li class="submenu">
+                            <a href="javascript:;" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
+                            <ul>
+                                {% for project in site.projects %}
+                                <li><a href="{{ site.baseurl }}{{ project.url }}"{% if page.url == project.url %} class="active"{% endif %}>{{ project.menu_label | default: project.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        {% elsif item.auto_collection == 'publications' %}
+                        <li class="submenu">
+                            <a href="javascript:;" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
+                            <ul>
+                                {% for publication in site.publications %}
+                                <li><a href="{{ site.baseurl }}{{ publication.url }}"{% if page.url == publication.url %} class="active"{% endif %}>{{ publication.menu_label | default: publication.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
                         {% else %}
                         <li{% if page.url == '/' and item.url == '/' %} class="scroll-to-section"{% endif %}>
                             <a href="{{ site.baseurl }}{{ item.url }}{% if item.url == '/' %}#top{% endif %}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>

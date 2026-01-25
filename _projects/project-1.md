@@ -1,4 +1,5 @@
 ---
+menu_label: Project 1
 title: "From Pixels to Protection: GIS Decision Support Tool for Conservation Planning"
 description: "Developed a fully customizable GIS decision support tool for the Haliburton
 Highlands Land Trust to prioritize conservation areas within the Highlands Corridor initiative.
@@ -9,14 +10,18 @@ environmental conditions. This tool is now actively used to prioritize land acqu
 stewardship efforts across Crown land, unceded territory, and private holdings connecting three
 provincial parks (Queen Elizabeth II Wildlands, Frost Centre, Silent Lake). Awarded the J.
 Emmett Duff Memorial Prize in Geography."
-date: April 2024 - May 2025
+date: 2024-01-01
 categories:
   - GIS Analysis
   - onservation Planning
   - Remote Sensing
   - Community-Based Research
 technologies:
-  - ArcGIS Pro, ModelBuilder, Python (ArcPy), Remote Sensing (NDVI analysis), ENVI
+  - ArcGIS Pro
+  - ModelBuilder
+  - Python (ArcPy)
+  - Remote Sensing (NDVI analysis)
+  - ENVI
 demo_url: "#"
 github_url: "#"
 images:

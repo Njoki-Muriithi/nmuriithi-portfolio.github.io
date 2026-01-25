@@ -246,17 +246,20 @@
 /* Image Gallery Sections */
 .image-section {
     padding: 0;
-    margin: 0;
+    margin: 0 0 40px 0;
 }
 
 .image-container {
     position: relative;
     width: 100%;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-container img {
-    width: 100%;
+    width: 80%;
     height: auto;
     display: block;
 }

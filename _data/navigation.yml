@@ -5,15 +5,9 @@ main:
     url: /about/
   - title: Projects
     url: /projects/
-    submenu:
-      - title: Project 1
-        url: /projects/project-one/
-      - title: Project 2
-        url: /projects/project-two/
+    auto_collection: projects
   - title: Publications
     url: /publications/
-    submenu:
-      - title: Publication 1
-        url: /publications/publication-one/
+    auto_collection: publications
   - title: Contact Me
     url: /contact/
