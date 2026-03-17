@@ -148,12 +148,6 @@ The navigation menu automatically updates when you add new projects or publicati
 - **Publications Menu**: Automatically populated from all files in `_publications/` folder
 - **Menu Label**: Uses the `menu_label` front matter field (falls back to `title` if not set)
 
-### Benefits
-
-- No need to manually update `_data/navigation.yml` when adding content
-- Consistent navigation structure
-- Menu items are automatically linked to the correct pages
-
 **Example**: When you add a new project file `_projects/my-project.md` with `menu_label: "Project 3"`, it will automatically appear in the Projects dropdown menu.
 
 ## Project Structure
@@ -219,17 +213,6 @@ This site is configured for GitHub Pages. To deploy:
    https://njoki-muriithi.github.io/nmuriithi-portfolio.github.io
    ```
 
-## Features
-
-- Responsive design (mobile-friendly)
-- Automatic navigation menu generation from projects and publications
-- Image galleries with captions
-- Category-based organization
-- Technology tags
-- Accessibility features (ARIA labels, keyboard navigation)
-- SEO optimization (via jekyll-seo-tag)
-- Sitemap generation (via jekyll-sitemap)
-
 ## Technologies
 
 - Jekyll 4.3
@@ -238,10 +221,6 @@ This site is configured for GitHub Pages. To deploy:
 - Liquid (templating)
 - SCSS/CSS
 - JavaScript (ES6)
-
-## License
-
-This is a personal portfolio website. All content is © Njoki Muriithi.
 
 ## Contact
 

@@ -13,7 +13,7 @@ Emmett Duff Memorial Prize in Geography."
 date: 2024-01-01
 categories:
   - GIS Analysis
-  - onservation Planning
+  - Conservation Planning
   - Remote Sensing
   - Community-Based Research
 technologies:

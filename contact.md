@@ -19,11 +19,11 @@ heading: Let's Work Together
             <ul class="contact-info" style="list-style: none; padding: 0; margin-top: 30px;">
                 <li style="margin-bottom: 15px;">
                     <i class="fa fa-linkedin" style="color: #9FA8DA; margin-right: 10px;"></i>
-                    <a href="https://www.linkedin.com/in/njoki-muriithi-1869451bb/" target="_blank">LinkedIn Profile</a>
+                    <a href="https://www.linkedin.com/in/njoki-muriithi-1869451bb/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
                 </li>
                 <li style="margin-bottom: 15px;">
                     <i class="fa fa-github" style="color: #9FA8DA; margin-right: 10px;"></i>
-                    <a href="https://github.com/Njoki-Muriithi" target="_blank">GitHub Profile</a>
+                    <a href="https://github.com/Njoki-Muriithi" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
                 </li>
             </ul>
         </div>
@@ -55,7 +55,7 @@ heading: Let's Work Together
             
             <div style="background: #f7f7f7; padding: 40px; border-radius: 5px; text-align: center;">
                 <i class="fa fa-envelope-o" style="font-size: 48px; color: #9FA8DA; margin-bottom: 20px;"></i>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdhSpWRVlWRuGjtmAHTE7UV8zF-mOq9EMTduXXHWFR1G8JPjA/viewform?embedded=true" width="640" height="856" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdhSpWRVlWRuGjtmAHTE7UV8zF-mOq9EMTduXXHWFR1G8JPjA/viewform?embedded=true" width="100%" height="856" frameborder="0" marginheight="0" marginwidth="0" style="max-width: 100%;">Loading…</iframe>
             </div>
         </div>
     </div>

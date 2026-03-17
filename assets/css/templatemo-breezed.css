@@ -28,7 +28,7 @@ Table of contents
 font & reset css
 --------------------------------------------- 
 */
-@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+/* Poppins import removed — unused font */
 /* 
 ---------------------------------------------
 reset
@@ -44,25 +44,10 @@ figure, header, nav, section, article, aside, footer, figcaption {
   outline: 0;
 }
 
-.clearfix:after {
-  content: ".";
+.clearfix::after {
+  content: "";
   display: block;
   clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-
-.clearfix {
-  display: inline-block;
-}
-
-html[xmlns] .clearfix {
-  display: block;
-}
-
-* html .clearfix {
-  height: 1%;
 }
 
 ul, li {
@@ -90,7 +75,7 @@ html, body {
 }
 
 a {
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -829,6 +814,23 @@ banner
 .Modern-Slider .item .img-fill{
   height:95vh;
   background:#000;
+  position: relative;
+}
+
+.Modern-Slider .item .img-fill::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.Modern-Slider .item .img-fill .text-content{
+  position: relative;
+  z-index: 2;
 }
 
 .Modern-Slider .item .info > div{

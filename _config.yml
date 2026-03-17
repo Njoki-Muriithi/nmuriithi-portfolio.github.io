@@ -1,6 +1,6 @@
 # Site Settings
 title: "Njoki Muriithi Portfolio"
-description: "Portfolio of Njoki Muriithi - Developer and Creative Professional"
+description: "Portfolio of Njoki Muriithi - Environmental Scientist and GIS Specialist"
 author: "Njoki Muriithi"
 email: "njokimuriithi@alumni.trentu.ca"
 baseurl: "/nmuriithi-portfolio.github.io" # Repository name for GitHub Pages project sites
@@ -55,3 +55,10 @@ exclude:
   - README.md
   - node_modules
   - vendor
+  - package.json
+  - package-lock.json
+  - playwright.config.ts
+  - tests
+  - test-results
+  - playwright-report
+  - openspec

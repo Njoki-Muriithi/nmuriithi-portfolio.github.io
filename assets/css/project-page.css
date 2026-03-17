@@ -1,8 +1,12 @@
 /* Project Page Styles */
 
+:root {
+    --header-height: 80px;
+}
+
 /* Project Info Section */
 .project-hero {
-    padding: 140px 0 0 0;
+    padding: calc(var(--header-height) + 60px) 0 0 0;
     background: #f7f7f7;
 }
 
@@ -12,8 +16,8 @@
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
     position: sticky;
-    top: 100px;
-    max-height: calc(100vh - 120px);
+    top: calc(var(--header-height) + 20px);
+    max-height: calc(100vh - var(--header-height) - 40px);
     overflow-y: auto;
     transition: all 0.3s ease;
 }

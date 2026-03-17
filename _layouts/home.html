@@ -1,5 +1,6 @@
 ---
 layout: default
+extra_js: home-page.js
 ---
 
 <!-- ***** Main Banner Area Start ***** -->
@@ -19,23 +20,10 @@ layout: default
       <!-- // Item -->
     </div>
 </div>
-<div class="scroll-down scroll-to-section"><a href="#social-section"><i class="fa fa-arrow-down"></i></a></div>
+<div class="scroll-down scroll-to-section"><a href="#portfolio-content"><i class="fa fa-arrow-down"></i></a></div>
 <!-- ***** Main Banner Area End ***** -->
 
+<div id="portfolio-content">
 {{ content }}
-
-<script>
-    $(function() {
-        var selectedClass = "";
-        $("p").click(function(){
-        selectedClass = $(this).attr("data-rel");
-        $("#portfolio").fadeTo(50, 0.1);
-            $("#portfolio div").not("."+selectedClass).fadeOut();
-        setTimeout(function() {
-          $("."+selectedClass).fadeIn();
-          $("#portfolio").fadeTo(50, 1);
-        }, 500);
-            
-        });
-    });
-</script>
+</div>
+<div aria-live="polite" id="filter-announcer" class="sr-only"></div>

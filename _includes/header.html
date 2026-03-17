@@ -10,11 +10,11 @@
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
-                    <ul class="nav" id="main-nav-list" role="menubar">
+                    <ul class="nav" id="main-nav-list">
                         {% for item in site.data.navigation.main %}
                         {% if item.submenu %}
                         <li class="submenu">
-                            <a href="javascript:;" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
+                            <a href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
                             <ul>
                                 {% for subitem in item.submenu %}
                                 <li><a href="{{ site.baseurl }}{{ subitem.url }}"{% if page.url == subitem.url %} class="active"{% endif %}>{{ subitem.title }}</a></li>
@@ -23,7 +23,7 @@
                         </li>
                         {% elsif item.auto_collection == 'projects' %}
                         <li class="submenu">
-                            <a href="javascript:;" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
+                            <a href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
                             <ul>
                                 {% for project in site.projects %}
                                 <li><a href="{{ site.baseurl }}{{ project.url }}"{% if page.url == project.url %} class="active"{% endif %}>{{ project.menu_label | default: project.title }}</a></li>
@@ -32,7 +32,7 @@
                         </li>
                         {% elsif item.auto_collection == 'publications' %}
                         <li class="submenu">
-                            <a href="javascript:;" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
+                            <a href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
                             <ul>
                                 {% for publication in site.publications %}
                                 <li><a href="{{ site.baseurl }}{{ publication.url }}"{% if page.url == publication.url %} class="active"{% endif %}>{{ publication.menu_label | default: publication.title }}</a></li>

@@ -1,36 +1,44 @@
 (function ($) {
-	
+
 	"use strict";
 
+	// RAF-based scroll throttle
+	var scrollTicking = false;
 	$(window).scroll(function() {
-	  var scroll = $(window).scrollTop();
-	  var box = $('.header-text').height();
-	  var header = $('header').height();
+		if (!scrollTicking) {
+			requestAnimationFrame(function() {
+				var scroll = $(window).scrollTop();
+				var box = $('.header-text').height();
+				var header = $('header').height();
 
-	  if (scroll >= box - header) {
-	    $("header").addClass("background-header");
-	  } else {
-	    $("header").removeClass("background-header");
-	  }
+				if (scroll >= box - header) {
+					$("header").addClass("background-header");
+				} else {
+					$("header").removeClass("background-header");
+				}
+				scrollTicking = false;
+			});
+			scrollTicking = true;
+		}
 	});
-	
+
 
 	$('.filters ul li').click(function(){
-	  $('.filters ul li').removeClass('active');
-	  $(this).addClass('active');
-	  
-	  var data = $(this).attr('data-filter');
-	  $grid.isotope({
-	    filter: data
-	  })
+		$('.filters ul li').removeClass('active');
+		$(this).addClass('active');
+
+		var data = $(this).attr('data-filter');
+		$grid.isotope({
+			filter: data
+		})
 	});
 
 	var $grid = $(".grid").isotope({
-	  itemSelector: ".all",
-	  percentPosition: true,
-	  masonry: {
-	    columnWidth: ".all"
-	  }
+		itemSelector: ".all",
+		percentPosition: true,
+		masonry: {
+			columnWidth: ".all"
+		}
 	})
 
 	$(".Modern-Slider").slick({
@@ -46,7 +54,7 @@
 	   // fade:true,
 	    draggable:false,
 	    prevArrow:'<button class="PrevArrow"></button>',
-	    nextArrow:'<button class="NextArrow"></button>', 
+	    nextArrow:'<button class="NextArrow"></button>',
 	  });
 
 	$('.search-icon a').on("click", function(event) {
@@ -95,11 +103,11 @@
 
 	// Scroll animation init
 	window.sr = new scrollReveal();
-	
+
 
 	// Menu Dropdown Toggle with ARIA support
 	if($('.menu-trigger').length){
-		$(".menu-trigger").on('click', function() {	
+		$(".menu-trigger").on('click', function() {
 			$(this).toggleClass('active');
 			var expanded = $(this).attr('aria-expanded') === 'true';
 			$(this).attr('aria-expanded', !expanded);
@@ -107,21 +115,38 @@
 		});
 	}
 
+	// Dropdown keyboard support — prevent default on # links, allow Enter/Space to toggle
+	$('.submenu > a[role="button"]').on('click', function(e) {
+		e.preventDefault();
+	}).on('keydown', function(e) {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			$(this).parent().find('ul').toggleClass('active');
+			var expanded = $(this).attr('aria-expanded') === 'true';
+			$(this).attr('aria-expanded', !expanded);
+		}
+	});
+
 
 	// Menu elevator animation - exclude skip-link
 	$('a[href*=\\#]:not([href=\\#]):not(.skip-link)').on('click', function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-			var target = $(this.hash);
-			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-			if (target.length) {
+			var hashValue = this.hash.slice(1);
+			var target = document.getElementById(hashValue);
+			if (!target) {
+				target = document.getElementsByName(hashValue)[0];
+			}
+			if (target) {
+				var $target = $(target);
 				var width = $(window).width();
+				var headerHeight = $('header').outerHeight() || 80;
 				if(width < 991) {
 					$('.menu-trigger').removeClass('active');
 					$('.menu-trigger').attr('aria-expanded', 'false');
-					$('.header-area .nav').slideUp(200);	
-				}				
+					$('.header-area .nav').slideUp(200);
+				}
 				$('html,body').animate({
-					scrollTop: (target.offset().top) - 80
+					scrollTop: ($target.offset().top) - headerHeight
 				}, 700);
 				return false;
 			}
@@ -130,22 +155,24 @@
 
 	$(document).ready(function () {
 	    $(document).on("scroll", onScroll);
-	    
+
 	    //smoothscroll - exclude skip-link from this handler
 	    $('a[href^="#"]:not(.skip-link)').on('click', function (e) {
 	        e.preventDefault();
 	        $(document).off("scroll");
-	        
+
 	        $('a').each(function () {
 	            $(this).removeClass('active');
 	        })
 	        $(this).addClass('active');
-	      
+
 	        var hash = this.hash;
-	        var $target = $(hash);
-	        if ($target.length) {
+	        var targetEl = hash.length > 1 ? document.getElementById(hash.slice(1)) : null;
+	        if (targetEl) {
+	            var $target = $(targetEl);
+	            var headerHeight = $('header').outerHeight() || 79;
 	            $('html, body').stop().animate({
-	                scrollTop: ($target.offset().top) - 79
+	                scrollTop: ($target.offset().top) - headerHeight
 	            }, 500, 'swing', function () {
 	                window.location.hash = hash;
 	                $(document).on("scroll", onScroll);
@@ -165,9 +192,10 @@
 	            // Skip if it's just "#" or if the element doesn't exist
 	            if (hash.length > 1) {
 	                try {
-	                    var refElement = $(hash);
-	                    if (refElement.length && refElement.position()) {
-	                        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+	                    var refElement = document.getElementById(hash.slice(1));
+	                    if (refElement) {
+	                        var $ref = $(refElement);
+	                        if ($ref.position().top <= scrollPos && $ref.position().top + $ref.height() > scrollPos) {
 	                            $('.nav ul li a').removeClass("active");
 	                            currLink.addClass("active");
 	                        } else {

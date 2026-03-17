@@ -20,7 +20,7 @@ heading: Who I Am & What I Do
                 complex spatial data and actionable conservation solutions, with a focus on making
                 environmental science accessible and impactful.</p>
             
-            <p><strong>Working With Me: What to Expect</strong>
+            <p><strong>Working With Me: What to Expect</strong></p>
             <p>I approach every project with curiosity, rigor, and a commitment to delivering products that are
                 both technically sound and user-friendly. Whether I'm building a custom GIS tool, conducting
                 field assessments, or coordinating stakeholder engagement, I prioritize clear communication,
@@ -52,8 +52,8 @@ that prioritize collaboration, continuous learning, and inclusive practices.</p>
                 <h5 style="font-weight: 600; margin-bottom: 15px;">GIS & Spatial Analysis:</h5>
                 <ul style="list-style: none; padding: 0;">
                     <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i>ArcGIS Pro (Spatial Analyst, ModelBuilder, Network Analyst)</li>
-                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i><b>Python scripting (ArcPy)</li>
-                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i><b>ArcGIS Online (web maps, dashboards, feature services)</li>
+                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i><b>Python scripting (ArcPy)</b></li>
+                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i><b>ArcGIS Online (web maps, dashboards, feature services)</b></li>
                     <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i>ESRI Field Maps and Survey123</li>
                     <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i>ESRI StoryMaps</li>
                     <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i>QGIS</li>
@@ -67,7 +67,7 @@ that prioritize collaboration, continuous learning, and inclusive practices.</p>
     </div>
     <div class="col-lg-6 col-md-6 col-xs-12">
         <div class="right-image">
-            <img src="{{ site.baseurl }}/assets/images/self_pic2.JPG" alt="About Njoki Muriithi" style="border-radius: 5px; box-shadow: 0 0 15px rgba(0,0,0,0.1); max-width: 100%; max-height: 600px; width: auto; height: auto; object-fit: contain;">
+            <img src="{{ site.baseurl }}/assets/images/self_pic2.JPG" alt="About Njoki Muriithi" class="about-image" loading="lazy">
         </div>
     </div>
 </div>
@@ -80,8 +80,8 @@ that prioritize collaboration, continuous learning, and inclusive practices.</p>
         </div>
     </div>
     <div class="col-lg-12">
-        <p>Throughout my career, I've had the opportunity to work on diverse projects that have shaped my skills and perspective. From startups to established companies, each experience has contributed to my growth as a professional.</p>
-        
-        <p>I believe in continuous learning and staying current with industry trends, ensuring that the solutions I deliver are not just relevant today, but built for tomorrow.</p>
+        <p>My academic journey at Trent University provided hands-on experience across a wide range of environmental disciplines — from aquatic biomonitoring and forestry to wetland assessment, soil science, and cadastral analysis. Each project deepened my ability to apply GIS and spatial analysis to real-world conservation challenges.</p>
+
+        <p>I'm committed to bridging the gap between complex spatial data and actionable environmental solutions, with a focus on community-based research and collaborative problem-solving.</p>
     </div>
 </div>

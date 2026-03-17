@@ -18,9 +18,5 @@ technologies:
   - Wetland assessment tools
 demo_url: "#"
 github_url: "#"
-images:
-  - src: "/assets/images/image.png"
-    alt: "Workflow Diagram Poster"
-    title: "Workflow Diagram Poster"
-    caption: ""
+images: []
 ---
