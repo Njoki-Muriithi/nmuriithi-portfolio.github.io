@@ -32,16 +32,16 @@
 }
 
 .project-info-sidebar::-webkit-scrollbar-thumb {
-    background: #9FA8DA;
+    background: var(--color-primary, #9FA8DA);
     border-radius: 3px;
 }
 
 .project-info-sidebar::-webkit-scrollbar-thumb:hover {
-    background: #FFD54F;
+    background: var(--color-accent, #FFD54F);
 }
 
-.project-info-sidebar h6 {
-    color: #9FA8DA;
+.project-info-sidebar .project-category {
+    color: var(--color-primary, #9FA8DA);
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
@@ -49,7 +49,7 @@
     margin-bottom: 10px;
 }
 
-.project-info-sidebar h2 {
+.project-info-sidebar h1 {
     font-size: 32px;
     font-weight: 700;
     color: #1e1e1e;
@@ -68,7 +68,7 @@
     margin-bottom: 25px;
 }
 
-.tech-stack h5 {
+.tech-stack h2 {
     font-size: 16px;
     font-weight: 600;
     color: #1e1e1e;
@@ -99,7 +99,7 @@
 .project-links a {
     display: inline-block;
     margin-right: 15px;
-    color: #9FA8DA;
+    color: var(--color-primary, #9FA8DA);
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
@@ -119,7 +119,7 @@
     padding-top: 20px;
 }
 
-.image-navigation h5 {
+.image-navigation h2 {
     font-size: 14px;
     font-weight: 600;
     color: #1e1e1e;
@@ -220,6 +220,12 @@
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .info-overlay-backdrop.active {
@@ -262,9 +268,26 @@
     align-items: center;
 }
 
-.image-container img {
-    width: 80%;
+.image-container img,
+.image-container .gallery-image {
+    max-width: 100%;
+    width: auto;
     height: auto;
+    display: block;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.gallery-empty-state {
+    text-align: center;
+    padding: 80px 40px;
+    color: var(--color-text-muted, #777);
+}
+
+.gallery-empty-state .fa {
+    font-size: 48px;
+    color: var(--color-primary, #9FA8DA);
+    margin-bottom: 20px;
     display: block;
 }
 
@@ -332,7 +355,7 @@
 }
 
 /* Responsive */
-@media (max-width: 991px) {
+@media (max-width: 992px) {
     .project-info-sidebar {
         position: static;
         margin-bottom: 40px;
@@ -348,7 +371,7 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .project-hero {
         padding: 120px 0 40px 0;
     }

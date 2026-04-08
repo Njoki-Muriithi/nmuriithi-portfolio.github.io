@@ -36,10 +36,10 @@ export default defineConfig({
       },
     },
   ],
-  webServer: {
+  webServer: process.env.PW_NO_SERVER ? undefined : {
     command: 'bundle exec jekyll serve',
     url: BASE_URL,
     reuseExistingServer: !process.env.CI,
-    timeout: 120000,
+    timeout: 180000,
   },
 });

@@ -5,10 +5,10 @@ import { test, expect } from '@playwright/test';
  *
  * Covers:
  * - Login view renders with GitHub OAuth button
- * - Dashboard view structure (cards for Projects and Publications)
+ * - Dashboard view structure (stat cards, content health, recent edits)
  * - Editor sidebar toggle (collapse/expand, toggle stays visible)
  * - Editor form field presence (all front matter fields, action buttons)
- * - View navigation (dashboard → collection editor)
+ * - View navigation (nav links → collection editor)
  *
  * Note: These tests validate UI structure and client-side interactions
  * without requiring a live Supabase/GitHub session.
@@ -18,14 +18,14 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Admin login view', () => {
   test('login card with "Admin Login" heading is visible', async ({ page }) => {
-    await page.goto('/admin/');
+    await page.goto('/nmuriithi-portfolio.github.io/admin/');
     const heading = page.locator('.login-card h1');
     await expect(heading).toBeVisible();
     await expect(heading).toHaveText('Admin Login');
   });
 
   test('"Sign in with GitHub" button is present', async ({ page }) => {
-    await page.goto('/admin/');
+    await page.goto('/nmuriithi-portfolio.github.io/admin/');
     const btn = page.locator('#btn-github-login');
     await expect(btn).toBeVisible();
     const text = await btn.textContent();
@@ -33,13 +33,13 @@ test.describe('Admin login view', () => {
   });
 
   test('top navigation bar is hidden before login', async ({ page }) => {
-    await page.goto('/admin/');
+    await page.goto('/nmuriithi-portfolio.github.io/admin/');
     const nav = page.locator('#admin-nav');
     await expect(nav).toBeHidden();
   });
 
   test('dashboard and editor views are hidden before login', async ({ page }) => {
-    await page.goto('/admin/');
+    await page.goto('/nmuriithi-portfolio.github.io/admin/');
     await expect(page.locator('#view-dashboard')).toBeHidden();
     await expect(page.locator('#view-editor')).toBeHidden();
   });
@@ -49,7 +49,7 @@ test.describe('Admin login view', () => {
 
 test.describe('Admin dashboard view', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/admin/');
+    await page.goto('/nmuriithi-portfolio.github.io/admin/');
     // Simulate authenticated state by showing dashboard
     await page.evaluate(() => {
       (document.getElementById('view-login') as HTMLElement).style.display = 'none';
@@ -58,28 +58,38 @@ test.describe('Admin dashboard view', () => {
     });
   });
 
-  test('dashboard has Projects and Publications cards', async ({ page }) => {
-    const cards = page.locator('.dashboard-card');
-    await expect(cards).toHaveCount(2);
+  test('dashboard has stat cards for Projects and Publications', async ({ page }) => {
+    const statCards = page.locator('.stat-card');
+    await expect(statCards).toHaveCount(2);
 
-    const projectsCard = page.locator('.dashboard-card', { hasText: 'Projects' });
-    await expect(projectsCard).toBeVisible();
-
-    const pubsCard = page.locator('.dashboard-card', { hasText: 'Publications' });
-    await expect(pubsCard).toBeVisible();
+    await expect(page.locator('#stat-projects')).toBeVisible();
+    await expect(page.locator('#stat-publications')).toBeVisible();
   });
 
-  test('each dashboard card has heading and description', async ({ page }) => {
-    const cards = page.locator('.dashboard-card');
-    const count = await cards.count();
+  test('each stat card has number and label', async ({ page }) => {
+    const statCards = page.locator('.stat-card');
+    const count = await statCards.count();
 
     for (let i = 0; i < count; i++) {
-      const card = cards.nth(i);
-      const h3 = card.locator('h3');
-      await expect(h3).toBeVisible();
-      const p = card.locator('p');
-      await expect(p).toBeVisible();
+      const card = statCards.nth(i);
+      await expect(card.locator('.stat-number')).toBeVisible();
+      await expect(card.locator('.stat-label')).toBeVisible();
     }
+  });
+
+  test('dashboard has Content Health section', async ({ page }) => {
+    const healthSection = page.locator('#health-warnings');
+    await expect(healthSection).toBeAttached();
+  });
+
+  test('dashboard has Recently Edited section', async ({ page }) => {
+    const recentSection = page.locator('#recent-edits');
+    await expect(recentSection).toBeAttached();
+  });
+
+  test('View Live Site link is present', async ({ page }) => {
+    const siteLink = page.locator('.btn-site-link');
+    await expect(siteLink).toBeVisible();
   });
 
   test('top nav shows Dashboard, Projects, and Publications links', async ({ page }) => {
@@ -100,7 +110,7 @@ test.describe('Admin dashboard view', () => {
 
 test.describe('Admin editor sidebar toggle', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/admin/');
+    await page.goto('/nmuriithi-portfolio.github.io/admin/');
     // Show editor view directly
     await page.evaluate(() => {
       (document.getElementById('view-login') as HTMLElement).style.display = 'none';
@@ -148,7 +158,7 @@ test.describe('Admin editor sidebar toggle', () => {
 
 test.describe('Admin editor form fields', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/admin/');
+    await page.goto('/nmuriithi-portfolio.github.io/admin/');
     // Show editor view and form
     await page.evaluate(() => {
       (document.getElementById('view-login') as HTMLElement).style.display = 'none';
@@ -213,7 +223,7 @@ test.describe('Admin editor form fields', () => {
 
 test.describe('Admin view navigation', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/admin/');
+    await page.goto('/nmuriithi-portfolio.github.io/admin/');
     // Show dashboard
     await page.evaluate(() => {
       (document.getElementById('view-login') as HTMLElement).style.display = 'none';
@@ -222,24 +232,23 @@ test.describe('Admin view navigation', () => {
     });
   });
 
-  test('clicking Projects card shows editor view', async ({ page }) => {
-    const projectsCard = page.locator('.dashboard-card[data-collection="projects"]');
-    await projectsCard.click();
+  test('clicking Projects nav link shows editor view', async ({ page }) => {
+    const projectsNav = page.locator('.nav-collection[data-collection="projects"]').first();
+    await projectsNav.click();
 
     await expect(page.locator('#view-editor')).toBeVisible();
     await expect(page.locator('#view-dashboard')).toBeHidden();
   });
 
-  test('clicking Publications card shows editor view', async ({ page }) => {
-    const pubsCard = page.locator('.dashboard-card[data-collection="publications"]');
-    await pubsCard.click();
+  test('clicking Publications nav link shows editor view', async ({ page }) => {
+    const pubsNav = page.locator('.nav-collection[data-collection="publications"]').first();
+    await pubsNav.click();
 
     await expect(page.locator('#view-editor')).toBeVisible();
     await expect(page.locator('#view-dashboard')).toBeHidden();
   });
 
   test('editor heading updates based on collection', async ({ page }) => {
-    // Click Projects nav link
     const projectsNav = page.locator('.nav-collection[data-collection="projects"]').first();
     await projectsNav.click();
 
@@ -248,8 +257,8 @@ test.describe('Admin view navigation', () => {
   });
 
   test('sidebar and editor main are visible in editor view', async ({ page }) => {
-    const projectsCard = page.locator('.dashboard-card[data-collection="projects"]');
-    await projectsCard.click();
+    const projectsNav = page.locator('.nav-collection[data-collection="projects"]').first();
+    await projectsNav.click();
 
     await expect(page.locator('#editor-sidebar')).toBeVisible();
     await expect(page.locator('#editor-main')).toBeVisible();

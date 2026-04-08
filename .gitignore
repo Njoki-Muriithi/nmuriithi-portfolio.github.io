@@ -24,6 +24,9 @@ Thumbs.db
 #spec documentation
 openspec
 
+# Local dev config (contains GitHub PAT)
+_config_local.yml
+
 #A.I
 .claude
 AGENTS.md

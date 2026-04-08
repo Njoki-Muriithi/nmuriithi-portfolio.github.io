@@ -9,13 +9,17 @@ heading: Projects Portfolio
 
 <div class="row">
     {% for project in site.projects %}
-    <div class="col-lg-6 col-md-6 col-xs-12 card-spacing">
+    <div class="col-lg-6 col-md-6 col-12 card-spacing">
         <div class="project-card">
-            {% if project.images.first %}
             <a href="{{ project.url }}">
+                {% if project.images.first %}
                 <img src="{{ site.baseurl }}{{ project.images.first.src }}" alt="{{ project.title }}" class="card-thumbnail" loading="lazy">
+                {% else %}
+                <div class="card-thumbnail-placeholder">
+                    <i class="fa fa-map" aria-hidden="true"></i>
+                </div>
+                {% endif %}
             </a>
-            {% endif %}
             <div class="card-body-content">
                 <span class="card-category">{{ project.categories | first }}</span>
                 <h4 class="card-title">

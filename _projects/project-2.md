@@ -1,5 +1,5 @@
 ---
-menu_label: Project 2
+menu_label: Campus Sustainability Map
 title: "Symons Campus Sustainability Map: Living Spatial Archive"
 description: Designed and built an interactive ESRI Dashboard application serving as a living spatial archive of Trent University's sustainability initiatives. The map catalogs 72+ campus features including green infrastructure, biodiversity projects, waste recovery systems, and transportation features. Created a mobile-friendly Field Maps data entry system allowing sustainability staff to independently update the archive in real-time. The dashboard supports both internal planning and public engagement, allowing users to explore sustainability efforts through photos, documents, videos, and linked resources.
 date: Sun Dec 31 2023 19:00:00 GMT-0500 (Eastern Standard Time)
@@ -17,9 +17,6 @@ technologies:
   - Python (ArcPy)
   - Remote Sensing (NDVI analysis)
   - ENVI
-demo_url: "#"
-github_url: "#"
-display_order: 2
 images:
   - src: /assets/images/honorsProject/workflowdiagramposter.jpg
     alt: Workflow Diagram Poster

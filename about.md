@@ -8,7 +8,7 @@ heading: Who I Am & What I Do
 ---
 
 <div class="row">
-    <div class="col-lg-6 col-md-6 col-xs-12">
+    <div class="col-lg-6 col-md-6 col-12">
         <div class="left-text-content">
             <p>I'm Njoki Muriithi, an environmental scientist and GIS specialist passionate about using spatial
                 analysis and community-based research to support conservation and sustainable land
@@ -65,7 +65,7 @@ that prioritize collaboration, continuous learning, and inclusive practices.</p>
             </div>
         </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-xs-12">
+    <div class="col-lg-6 col-md-6 col-12">
         <div class="right-image">
             <img src="{{ site.baseurl }}/assets/images/self_pic2.JPG" alt="About Njoki Muriithi" class="about-image" loading="lazy">
         </div>

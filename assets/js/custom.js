@@ -2,19 +2,24 @@
 
 	"use strict";
 
-	// RAF-based scroll throttle
-	var scrollTicking = false;
+	// Consolidated RAF-based scroll handler
+	let scrollTicking = false;
+	let trackNavActive = true;
 	$(window).scroll(function() {
 		if (!scrollTicking) {
 			requestAnimationFrame(function() {
-				var scroll = $(window).scrollTop();
-				var box = $('.header-text').height();
-				var header = $('header').height();
+				const scroll = $(window).scrollTop();
+				const box = $('.header-text').height();
+				const header = $('header').height();
 
 				if (scroll >= box - header) {
 					$("header").addClass("background-header");
 				} else {
 					$("header").removeClass("background-header");
+				}
+
+				if (trackNavActive) {
+					onScroll();
 				}
 				scrollTicking = false;
 			});
@@ -69,7 +74,7 @@
 	if($('.menu-trigger').length){
 		$(".menu-trigger").on('click', function() {
 			$(this).toggleClass('active');
-			var expanded = $(this).attr('aria-expanded') === 'true';
+			const expanded = $(this).attr('aria-expanded') === 'true';
 			$(this).attr('aria-expanded', !expanded);
 			$('.header-area .nav').slideToggle(200);
 		});
@@ -82,7 +87,7 @@
 		if (e.key === 'Enter' || e.key === ' ') {
 			e.preventDefault();
 			$(this).parent().find('ul').toggleClass('active');
-			var expanded = $(this).attr('aria-expanded') === 'true';
+			const expanded = $(this).attr('aria-expanded') === 'true';
 			$(this).attr('aria-expanded', !expanded);
 		}
 	});
@@ -91,16 +96,16 @@
 	// Menu elevator animation - exclude skip-link
 	$('a[href*=\\#]:not([href=\\#]):not(.skip-link)').on('click', function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-			var hashValue = this.hash.slice(1);
-			var target = document.getElementById(hashValue);
+			const hashValue = this.hash.slice(1);
+			let target = document.getElementById(hashValue);
 			if (!target) {
 				target = document.getElementsByName(hashValue)[0];
 			}
 			if (target) {
-				var $target = $(target);
-				var width = $(window).width();
-				var headerHeight = $('header').outerHeight() || 80;
-				if(width < 991) {
+				const $target = $(target);
+				const width = $(window).width();
+				const headerHeight = document.querySelector('.header-area') ? document.querySelector('.header-area').offsetHeight : 80;
+				if(width < 992) {
 					$('.menu-trigger').removeClass('active');
 					$('.menu-trigger').attr('aria-expanded', 'false');
 					$('.header-area .nav').slideUp(200);
@@ -114,49 +119,49 @@
 	});
 
 	$(document).ready(function () {
-	    $(document).on("scroll", onScroll);
-
 	    //smoothscroll - exclude skip-link from this handler
 	    $('a[href^="#"]:not(.skip-link)').on('click', function (e) {
 	        e.preventDefault();
-	        $(document).off("scroll");
+	        trackNavActive = false;
 
-	        $('a').each(function () {
+	        // Only remove active from nav hash-links, not all anchors on the page
+	        $('.nav a[href^="#"]').each(function () {
 	            $(this).removeClass('active');
 	        })
 	        $(this).addClass('active');
 
-	        var hash = this.hash;
-	        var targetEl = hash.length > 1 ? document.getElementById(hash.slice(1)) : null;
+	        const hash = this.hash;
+	        const targetEl = hash.length > 1 ? document.getElementById(hash.slice(1)) : null;
 	        if (targetEl) {
-	            var $target = $(targetEl);
-	            var headerHeight = $('header').outerHeight() || 79;
+	            const $target = $(targetEl);
+	            const headerHeight = document.querySelector('.header-area') ? document.querySelector('.header-area').offsetHeight : 80;
 	            $('html, body').stop().animate({
 	                scrollTop: ($target.offset().top) - headerHeight
 	            }, 500, 'swing', function () {
 	                window.location.hash = hash;
-	                $(document).on("scroll", onScroll);
+	                trackNavActive = true;
 	            });
 	        }
 	    });
 	});
 
-	function onScroll(event){
-	    var scrollPos = $(document).scrollTop();
+	function onScroll(){
+	    const scrollPos = $(document).scrollTop();
 	    $('.nav a').each(function () {
-	        var currLink = $(this);
-	        var href = currLink.attr("href");
+	        const currLink = $(this);
+	        const href = currLink.attr("href");
 	        // Only process hash links that point to elements on this page
 	        if (href && href.indexOf('#') !== -1) {
-	            var hash = href.substring(href.indexOf('#'));
+	            const hash = href.substring(href.indexOf('#'));
 	            // Skip if it's just "#" or if the element doesn't exist
 	            if (hash.length > 1) {
 	                try {
-	                    var refElement = document.getElementById(hash.slice(1));
+	                    const refElement = document.getElementById(hash.slice(1));
 	                    if (refElement) {
-	                        var $ref = $(refElement);
+	                        const $ref = $(refElement);
 	                        if ($ref.position().top <= scrollPos && $ref.position().top + $ref.height() > scrollPos) {
-	                            $('.nav ul li a').removeClass("active");
+	                            // Only clear active from hash-based nav links, preserve page-level active
+	                            $('.nav ul li a[href*="#"]').removeClass("active");
 	                            currLink.addClass("active");
 	                        } else {
 	                            currLink.removeClass("active");
@@ -198,7 +203,7 @@
 
 	// Window Resize Mobile Menu Fix
 	function mobileNav() {
-		var width = $(window).width();
+		const width = $(window).width();
 		$('.submenu').on('click', function() {
 			if(width < 767) {
 				$('.submenu ul').removeClass('active');

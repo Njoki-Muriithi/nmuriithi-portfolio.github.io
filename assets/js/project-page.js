@@ -2,18 +2,18 @@
 
 $(document).ready(function() {
     // Clone sidebar content to overlay panel, removing IDs to prevent duplicates
-    var sidebarContent = $('#projectInfo').html();
+    const sidebarContent = $('#projectInfo').html();
     if (sidebarContent) {
         $('#overlayContent').html(sidebarContent.replace(/\bid="[^"]*"/g, ''));
     }
 
     // RAF-throttled scroll to show/hide floating button
-    var scrollTicking = false;
+    let scrollTicking = false;
     $(window).scroll(function() {
         if (!scrollTicking) {
             requestAnimationFrame(function() {
-                var scrollTop = $(window).scrollTop();
-                var heroHeight = $('.project-hero').outerHeight();
+                const scrollTop = $(window).scrollTop();
+                const heroHeight = $('.project-hero').outerHeight();
 
                 if (scrollTop > heroHeight - 100) {
                     $('#floatingBtn').addClass('show');
@@ -36,9 +36,9 @@ $(document).ready(function() {
     // Trap focus inside overlay when open (accessibility)
     $('#infoOverlay').on('keydown', function(e) {
         if (e.key === 'Tab') {
-            var focusable = $(this).find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-            var first = focusable.first();
-            var last = focusable.last();
+            const focusable = $(this).find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            const first = focusable.first();
+            const last = focusable.last();
 
             if (e.shiftKey && document.activeElement === first[0]) {
                 e.preventDefault();
@@ -52,7 +52,7 @@ $(document).ready(function() {
 
     // Bind nav buttons via data attributes (replaces inline onclick)
     $(document).on('click', '.nav-btn[data-image-index]', function() {
-        var index = $(this).data('image-index');
+        const index = $(this).data('image-index');
         scrollToImage(index);
     });
 
@@ -79,9 +79,9 @@ $(document).ready(function() {
 
 // Smooth scroll for navigation buttons
 function scrollToImage(imageNumber) {
-    var target = document.getElementById('image-' + imageNumber);
+    const target = document.getElementById('image-' + imageNumber);
     if (target) {
-        var headerHeight = $('header').outerHeight() || 80;
+        const headerHeight = document.querySelector('.header-area') ? document.querySelector('.header-area').offsetHeight : 80;
         $('html, body').animate({
             scrollTop: $(target).offset().top - headerHeight
         }, 800);
@@ -90,7 +90,7 @@ function scrollToImage(imageNumber) {
 
 // Toggle info overlay panel
 function toggleInfoOverlay() {
-    var isOpening = !$('#infoOverlay').hasClass('active');
+    const isOpening = !$('#infoOverlay').hasClass('active');
 
     $('#infoOverlay').toggleClass('active');
     $('#overlayBackdrop').toggleClass('active');
@@ -103,9 +103,9 @@ function toggleInfoOverlay() {
     if (isOpening) {
         $('body').css('overflow', 'hidden');
         // Focus the close button when opening
-        setTimeout(function() {
+        requestAnimationFrame(function() {
             $('.close-overlay').focus();
-        }, 100);
+        });
     } else {
         $('body').css('overflow', 'auto');
         // Return focus to the floating button

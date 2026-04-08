@@ -1,5 +1,5 @@
 ---
-menu_label: Project Name Example
+menu_label: Conservation GIS Tool
 title: "From Pixels to Protection: GIS Decision Support Tool for Conservation Planning"
 description: "Developed a fully customizable GIS decision support tool for the Haliburton
 Highlands Land Trust to prioritize conservation areas within the Highlands Corridor initiative.

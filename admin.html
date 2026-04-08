@@ -50,18 +50,45 @@ permalink: /admin/
   <!-- ─── Dashboard View ─────────────────────────────────────── -->
   <div id="view-dashboard" style="display: none;">
     <div class="dashboard-container">
-      <h2>Publish</h2>
-      <p>Select a content type to manage.</p>
+      <div class="dashboard-header">
+        <h2>Site Overview</h2>
+        <a href="{{ site.url }}{{ site.baseurl }}/" target="_blank" rel="noopener noreferrer" class="btn-site-link">
+          <i class="fa fa-external-link" style="margin-right: 6px;"></i>View Live Site
+        </a>
+      </div>
 
-      <div class="dashboard-cards">
-        <a href="#" class="dashboard-card nav-collection" data-collection="projects">
-          <h3>Projects</h3>
-          <p>Add, edit, or remove portfolio projects.</p>
-        </a>
-        <a href="#" class="dashboard-card nav-collection" data-collection="publications">
-          <h3>Publications</h3>
-          <p>Add, edit, or remove academic publications.</p>
-        </a>
+      <!-- Content Counts -->
+      <div class="dashboard-stats" id="dashboard-stats">
+        <div class="stat-card">
+          <span class="stat-number" id="stat-projects">--</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" id="stat-publications">--</span>
+          <span class="stat-label">Publications</span>
+        </div>
+      </div>
+
+      <!-- Content Health -->
+      <div class="dashboard-section">
+        <h3>Content Health</h3>
+        <div id="health-warnings" class="health-warnings">
+          <div class="dashboard-loading">
+            <div class="spinner"></div>
+            <p>Checking content...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Edits -->
+      <div class="dashboard-section">
+        <h3>Recently Edited</h3>
+        <div id="recent-edits" class="recent-edits">
+          <div class="dashboard-loading">
+            <div class="spinner"></div>
+            <p>Loading recent activity...</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -85,7 +112,7 @@ permalink: /admin/
       <!-- Editor Main -->
       <div id="editor-main" class="editor-main">
         <div id="editor-form-container" class="editor-form-container" style="display: none;">
-          <form id="editor-form" onsubmit="return false;">
+          <form id="editor-form">
 
             <div class="form-group">
               <label for="field-menu_label">Menu Label</label>
@@ -185,6 +212,10 @@ permalink: /admin/
     window.__GITHUB_OWNER__ = "{{ site.github_owner }}";
     window.__GITHUB_REPO__ = "{{ site.github_repo }}";
     window.__GITHUB_BRANCH__ = "{{ site.github_branch | default: 'main' }}";
+    {% if jekyll.environment == "development" and site.github_pat %}
+    window.__DEV_BYPASS__ = true;
+    window.__GITHUB_PAT__ = "{{ site.github_pat }}";
+    {% endif %}
   </script>
   <script src="{{ site.baseurl }}/assets/js/supabase-client.js"></script>
 

@@ -11,10 +11,11 @@ extra_js: project-page.js
         <div class="row">
             <!-- IMAGES COLUMN - 2/3 width on left -->
             <div class="col-lg-8 col-md-12 images-column order-lg-1 order-2">
+                {% if page.images and page.images.size > 0 %}
                 {% for image in page.images %}
                 <section class="image-section" id="image-{{ forloop.index }}">
                     <div class="image-container">
-                        <img src="{{ site.baseurl }}{{ image.src }}" alt="{{ image.alt | default: page.title }}" loading="lazy" style="aspect-ratio: 16/9;">
+                        <img src="{{ site.baseurl }}{{ image.src }}" alt="{{ image.alt | default: page.title }}" loading="lazy" class="gallery-image">
                         <div class="image-caption">
                             <h4>{{ image.title }}</h4>
                             <p>{{ image.caption }}</p>
@@ -22,19 +23,25 @@ extra_js: project-page.js
                     </div>
                 </section>
                 {% endfor %}
+                {% else %}
+                <div class="gallery-empty-state">
+                    <i class="fa fa-image" aria-hidden="true"></i>
+                    <p>No images available for this project.</p>
+                </div>
+                {% endif %}
             </div>
             
             <!-- PROJECT INFO SIDEBAR - 1/3 width on right -->
             <div class="col-lg-4 col-md-12 order-lg-2 order-1">
                 <div class="project-info-sidebar" id="projectInfo">
-                    <h6>{{ page.categories | first | default: "Project" }}</h6>
-                    <h2>{{ page.title }}</h2>
+                    <p class="project-category">{{ page.categories | first | default: "Project" }}</p>
+                    <h1>{{ page.title }}</h1>
                     
                     <p>{{ page.description }}</p>
                     
                     {% if page.technologies %}
                     <div class="tech-stack">
-                        <h5>Technologies Used</h5>
+                        <h2>Technologies Used</h2>
                         <ul>
                             {% for tech in page.technologies %}
                             <li>{{ tech }}</li>
@@ -44,17 +51,17 @@ extra_js: project-page.js
                     {% endif %}
                     
                     <div class="project-links">
-                        {% if page.demo_url and page.demo_url != "#" %}
+                        {% if page.demo_url and page.demo_url != "#" and page.demo_url != "" %}
                         <a href="{{ page.demo_url }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-external-link" aria-hidden="true"></i> Live Demo</a>
                         {% endif %}
-                        {% if page.github_url and page.github_url != "#" %}
+                        {% if page.github_url and page.github_url != "#" and page.github_url != "" %}
                         <a href="{{ page.github_url }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-github" aria-hidden="true"></i> View Code</a>
                         {% endif %}
                     </div>
                     
                     {% if page.images.size > 1 %}
                     <div class="image-navigation">
-                        <h5>Jump to Section</h5>
+                        <h2>Jump to Section</h2>
                         <div class="nav-buttons" role="group" aria-label="Image navigation">
                             {% for image in page.images %}
                             <button class="nav-btn" data-image-index="{{ forloop.index }}" aria-label="Go to image {{ forloop.index }}">{{ forloop.index }}</button>
@@ -75,7 +82,7 @@ extra_js: project-page.js
 </button>
 
 <!-- Info Overlay Panel -->
-<div class="info-overlay-backdrop" id="overlayBackdrop" role="button" tabindex="0" aria-label="Close project info panel" aria-hidden="true"></div>
+<button class="info-overlay-backdrop" id="overlayBackdrop" aria-label="Close project info panel" aria-hidden="true"></button>
 <div class="info-overlay" id="infoOverlay" role="dialog" aria-modal="true" aria-label="Project information">
     <button class="close-overlay" aria-label="Close panel">
         <i class="fa fa-times" aria-hidden="true"></i>

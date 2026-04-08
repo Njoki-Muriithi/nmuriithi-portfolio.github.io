@@ -11,7 +11,7 @@
     top: -50px;
     left: 50%;
     transform: translateX(-50%);
-    background: #9FA8DA;
+    background: var(--color-primary, #9FA8DA);
     color: #fff;
     padding: 12px 24px;
     z-index: 10001;
@@ -23,7 +23,7 @@
 
 .skip-link:focus {
     top: 0;
-    outline: 3px solid #FFD54F;
+    outline: 3px solid var(--color-accent, #FFD54F);
     outline-offset: 2px;
 }
 
@@ -36,27 +36,27 @@ input:focus,
 select:focus,
 textarea:focus,
 [tabindex]:focus {
-    outline: 3px solid #FFD54F;
+    outline: 3px solid var(--color-accent, #FFD54F);
     outline-offset: 2px;
 }
 
 /* Custom focus for specific elements */
 .nav a:focus,
 .logo:focus {
-    outline: 3px solid #FFD54F;
+    outline: 3px solid var(--color-accent, #FFD54F);
     outline-offset: 4px;
     border-radius: 4px;
 }
 
 .menu-trigger:focus {
-    outline: 3px solid #FFD54F;
+    outline: 3px solid var(--color-accent, #FFD54F);
     outline-offset: 2px;
 }
 
 .nav-btn:focus,
 .floating-info-btn:focus,
 .close-overlay:focus {
-    outline: 3px solid #FFD54F;
+    outline: 3px solid var(--color-accent, #FFD54F);
     outline-offset: 2px;
     box-shadow: 0 0 0 4px rgba(255, 213, 79, 0.3);
 }
@@ -73,7 +73,7 @@ button.menu-trigger {
 .skip-link:focus-visible,
 .nav a:focus-visible,
 .nav-btn:focus-visible {
-    outline: 3px solid #FFD54F;
+    outline: 3px solid var(--color-accent, #FFD54F);
     outline-offset: 2px;
 }
 

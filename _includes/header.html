@@ -1,5 +1,5 @@
 <!-- ***** Header Area Start ***** -->
-<header class="header-area header-sticky{% if page.header_style == 'solid' %} header-solid{% endif %}">
+{% assign hs = page.header_style | default: layout.header_style %}<header class="header-area header-sticky{% if hs == 'solid' %} header-solid{% endif %}">
     <div class="container">
         <div class="row">
             <div class="col-12">
