@@ -22,6 +22,7 @@ technologies:
   - ENVI
 demo_url: "#"
 github_url: "#"
+display_order: 2
 images:
   - src: "/assets/images/honorsProject/workflowdiagramposter.jpg"
     alt: "Workflow Diagram Poster"

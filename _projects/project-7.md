@@ -19,5 +19,6 @@ technologies:
   - USLE modeling, RothC (Soil Organic Carbon simulation)
 demo_url: "#"
 github_url: "#"
+display_order: 7
 images: []
 ---

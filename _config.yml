@@ -7,6 +7,15 @@ baseurl: "/nmuriithi-portfolio.github.io" # Repository name for GitHub Pages pro
 url: "https://njoki-muriithi.github.io"
 lang: "en"
 
+# Supabase Configuration (auth via GitHub OAuth)
+supabase_url: "https://zoyhplmjvkjvdyqcuryg.supabase.co"
+supabase_anon_key: "sb_publishable_4nfcFXu2DbVBeIRjgjQnhw_FvAQyoX1"
+
+# GitHub API Configuration (for admin panel content management)
+github_owner: "njoki-muriithi"
+github_repo: "nmuriithi-portfolio.github.io"
+github_branch: "main"
+
 # Build Settings
 markdown: kramdown
 highlighter: rouge

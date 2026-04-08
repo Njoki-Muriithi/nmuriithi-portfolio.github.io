@@ -21,5 +21,6 @@ technologies:
   - Historical land registry databases
 demo_url: "#"
 github_url: "#"
+display_order: 3
 images: []
 ---

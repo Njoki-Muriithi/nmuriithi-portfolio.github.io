@@ -1,5 +1,5 @@
 ---
-menu_label: Project 1
+menu_label: Project Name Example
 title: "From Pixels to Protection: GIS Decision Support Tool for Conservation Planning"
 description: "Developed a fully customizable GIS decision support tool for the Haliburton
 Highlands Land Trust to prioritize conservation areas within the Highlands Corridor initiative.
@@ -24,21 +24,10 @@ technologies:
   - ENVI
 demo_url: "#"
 github_url: "#"
+display_order: 1
 images:
   - src: "/assets/images/capstoneProject/The_add_edit_form.jpeg"
     alt: "The add/edit form"
     title: "The add/edit form"
-    caption: ""
-  - src: "/assets/images/capstoneProject/IMG_0576.jpeg"
-    alt: "Product Page Layout"
-    title: ""
-    caption: ""
-  - src: "/assets/images/capstoneProject/Selecting_the_correct_map.jpeg"
-    alt: "Mobile Responsive Design"
-    title: ""
-    caption: ""
-  - src: "/assets/images/capstoneProject/IMG_0577.jpeg"
-    alt: "Dashboard & Analytics"
-    title: ""
     caption: ""
 ---

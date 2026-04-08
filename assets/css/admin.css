@@ -1,0 +1,670 @@
+/* ─── Admin Panel Styles ─────────────────────────────────────── */
+
+:root {
+  --admin-primary: #4a6cf7;
+  --admin-primary-hover: #3a5ce5;
+  --admin-bg: #f5f7fa;
+  --admin-surface: #ffffff;
+  --admin-text: #333333;
+  --admin-text-muted: #6b7280;
+  --admin-border: #e2e8f0;
+  --admin-sidebar-width: 280px;
+  --admin-nav-height: 56px;
+  --admin-danger: #ef4444;
+  --admin-danger-hover: #dc2626;
+  --admin-success: #10b981;
+  --admin-warning: #f59e0b;
+}
+
+* { box-sizing: border-box; }
+
+body.admin-body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--admin-bg);
+  color: var(--admin-text);
+  min-height: 100vh;
+}
+
+/* ─── Toast Notifications ───────────────────────────────────── */
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+
+.toast-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.toast-success { background: var(--admin-success); color: #fff; }
+.toast-error { background: var(--admin-danger); color: #fff; }
+.toast-info { background: var(--admin-primary); color: #fff; }
+
+/* ─── Login View ────────────────────────────────────────────── */
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login-card {
+  background: var(--admin-surface);
+  border-radius: 12px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.login-card h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.login-card p {
+  color: var(--admin-text-muted);
+  text-align: center;
+  margin: 0 0 24px;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--admin-text);
+}
+
+.form-group input[type="email"],
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--admin-border);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--admin-primary);
+  box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--admin-primary);
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--admin-primary-hover);
+}
+
+.btn-danger {
+  background: var(--admin-danger);
+  color: #fff;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: var(--admin-danger-hover);
+}
+
+.btn-secondary {
+  background: var(--admin-border);
+  color: var(--admin-text);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #d1d5db;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn-github {
+  background: #24292e;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-github:hover:not(:disabled) {
+  background: #1b1f23;
+}
+
+.body-textarea {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  min-height: 150px;
+}
+
+/* ─── Top Navigation ────────────────────────────────────────── */
+
+.admin-nav {
+  background: var(--admin-surface);
+  height: var(--admin-nav-height);
+  border-bottom: 1px solid var(--admin-border);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.admin-nav .nav-brand {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--admin-text);
+  margin-right: 32px;
+}
+
+.admin-nav .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.admin-nav .nav-menu a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--admin-text-muted);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.admin-nav .nav-menu a:hover,
+.admin-nav .nav-menu a.active {
+  background: var(--admin-bg);
+  color: var(--admin-primary);
+}
+
+.admin-nav .nav-right {
+  margin-left: auto;
+}
+
+.btn-logout {
+  background: none;
+  border: 1px solid var(--admin-border);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--admin-text-muted);
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-logout:hover {
+  border-color: var(--admin-danger);
+  color: var(--admin-danger);
+}
+
+/* ─── Dashboard View ────────────────────────────────────────── */
+
+.dashboard-container {
+  margin-top: var(--admin-nav-height);
+  padding: 40px 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dashboard-container h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.dashboard-container p {
+  color: var(--admin-text-muted);
+  margin: 0 0 32px;
+  font-size: 14px;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.dashboard-card {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: 10px;
+  padding: 24px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.dashboard-card:hover {
+  border-color: var(--admin-primary);
+  box-shadow: 0 4px 12px rgba(74, 108, 247, 0.1);
+}
+
+.dashboard-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.dashboard-card p {
+  font-size: 13px;
+  color: var(--admin-text-muted);
+  margin: 0;
+}
+
+/* ─── Editor View ───────────────────────────────────────────── */
+
+.editor-container {
+  margin-top: var(--admin-nav-height);
+  display: flex;
+  height: calc(100vh - var(--admin-nav-height));
+}
+
+/* Sidebar */
+.editor-sidebar {
+  width: var(--admin-sidebar-width);
+  min-width: var(--admin-sidebar-width);
+  background: var(--admin-surface);
+  border-right: 1px solid var(--admin-border);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s, min-width 0.3s;
+  overflow: hidden;
+}
+
+.editor-sidebar.collapsed {
+  width: 0;
+  min-width: 0;
+  border-right: none;
+}
+
+.sidebar-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--admin-border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-header h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  flex: 1;
+}
+
+/* Sidebar toggle button - positioned between sidebar and editor main */
+.sidebar-toggle-btn {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: 0 4px 4px 0;
+  width: 24px;
+  height: 48px;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--admin-text-muted);
+  padding: 0;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 16px;
+  transition: background 0.2s;
+  z-index: 51;
+}
+
+.sidebar-toggle-btn:hover {
+  background: var(--admin-bg);
+  color: var(--admin-primary);
+}
+
+.btn-create-new {
+  margin: 12px 16px;
+  background: var(--admin-primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.btn-create-new:hover {
+  background: var(--admin-primary-hover);
+}
+
+.sidebar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.sidebar-item {
+  padding: 10px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--admin-border);
+  transition: background 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-item:hover {
+  background: var(--admin-bg);
+}
+
+.sidebar-item.active {
+  background: rgba(74, 108, 247, 0.08);
+  color: var(--admin-primary);
+  font-weight: 600;
+}
+
+/* Editor Main */
+.editor-main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  transition: all 0.3s;
+}
+
+.editor-main.expanded {
+  /* When sidebar collapsed, editor takes full width */
+}
+
+.editor-form-container {
+  max-width: 720px;
+}
+
+.editor-form-container h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+/* ─── Tag Fields ────────────────────────────────────────────── */
+
+.tag-field {
+  margin-bottom: 16px;
+}
+
+.tag-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  min-height: 28px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(74, 108, 247, 0.1);
+  color: var(--admin-primary);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.tag-remove {
+  background: none;
+  border: none;
+  color: var(--admin-primary);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 2px;
+  line-height: 1;
+}
+
+.tag-remove:hover {
+  color: var(--admin-danger);
+}
+
+.tag-input-group {
+  display: flex;
+  gap: 6px;
+}
+
+.tag-input-group input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid var(--admin-border);
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+.tag-input-group input:focus {
+  outline: none;
+  border-color: var(--admin-primary);
+}
+
+.tag-input-group button {
+  padding: 6px 12px;
+  background: var(--admin-bg);
+  border: 1px solid var(--admin-border);
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.tag-input-group button:hover {
+  background: var(--admin-border);
+}
+
+/* ─── Image Entries ─────────────────────────────────────────── */
+
+.images-section {
+  margin-bottom: 16px;
+}
+
+.images-section > label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.image-entry {
+  background: var(--admin-bg);
+  border: 1px solid var(--admin-border);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.image-entry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.image-entry-header strong {
+  font-size: 13px;
+}
+
+.btn-remove-image {
+  background: none;
+  border: none;
+  color: var(--admin-danger);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.image-entry label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--admin-text-muted);
+  margin-bottom: 6px;
+}
+
+.image-entry input {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--admin-border);
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  margin-bottom: 6px;
+}
+
+.image-entry input:focus {
+  outline: none;
+  border-color: var(--admin-primary);
+}
+
+.btn-add-image {
+  background: var(--admin-bg);
+  border: 1px dashed var(--admin-border);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--admin-text-muted);
+  font-family: inherit;
+  width: 100%;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-add-image:hover {
+  border-color: var(--admin-primary);
+  color: var(--admin-primary);
+}
+
+/* ─── Action Buttons ────────────────────────────────────────── */
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--admin-border);
+}
+
+/* ─── Responsive ────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .editor-sidebar {
+    position: fixed;
+    left: 0;
+    top: var(--admin-nav-height);
+    bottom: 0;
+    z-index: 50;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .editor-sidebar.collapsed {
+    transform: translateX(-100%);
+  }
+
+  .sidebar-toggle-btn {
+    position: fixed;
+    left: 0;
+    top: calc(var(--admin-nav-height) + 16px);
+    margin-top: 0;
+    z-index: 51;
+  }
+
+  .editor-main {
+    padding: 16px;
+  }
+
+  .admin-nav .nav-brand {
+    margin-right: 12px;
+    font-size: 14px;
+  }
+
+  .admin-nav .nav-menu a {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}

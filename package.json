@@ -9,6 +9,8 @@
     "test:a11y": "npx playwright test tests/a11y/",
     "test:visual": "npx playwright test tests/visual/",
     "test:update-snapshots": "npx playwright test tests/visual/ --update-snapshots",
+    "test:responsive": "npx playwright test tests/responsive/",
+    "test:perf": "npx playwright test tests/performance/",
     "serve": "bundle exec jekyll serve"
   },
   "devDependencies": {

@@ -15,5 +15,6 @@ technologies:
   - Site suitability modeling
 demo_url: "#"
 github_url: "#"
+display_order: 5
 images: []
 ---

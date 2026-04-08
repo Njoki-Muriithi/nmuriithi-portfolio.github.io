@@ -17,5 +17,6 @@ technologies:
   - Field data loggers
 demo_url: "#"
 github_url: "#"
+display_order: 6
 images: []
 ---

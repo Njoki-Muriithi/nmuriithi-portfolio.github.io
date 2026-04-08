@@ -25,7 +25,8 @@
                         <li class="submenu">
                             <a href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
                             <ul>
-                                {% for project in site.projects %}
+                                {% assign sorted_projects = site.projects | sort: "display_order" %}
+                            {% for project in sorted_projects %}
                                 <li><a href="{{ site.baseurl }}{{ project.url }}"{% if page.url == project.url %} class="active"{% endif %}>{{ project.menu_label | default: project.title }}</a></li>
                                 {% endfor %}
                             </ul>
@@ -34,7 +35,8 @@
                         <li class="submenu">
                             <a href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
                             <ul>
-                                {% for publication in site.publications %}
+                                {% assign sorted_publications = site.publications | sort: "display_order" %}
+                            {% for publication in sorted_publications %}
                                 <li><a href="{{ site.baseurl }}{{ publication.url }}"{% if page.url == publication.url %} class="active"{% endif %}>{{ publication.menu_label | default: publication.title }}</a></li>
                                 {% endfor %}
                             </ul>

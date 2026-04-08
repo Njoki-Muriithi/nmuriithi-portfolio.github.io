@@ -20,5 +20,6 @@ technologies:
   - Excel (data management)
 demo_url: "#"
 github_url: "#"
+display_order: 4
 images: []
 ---
