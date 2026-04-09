@@ -1,22 +1,21 @@
 <!-- ***** Footer Start ***** -->
-<footer>
+<footer id="site-footer">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-12">
-                <div class="left-text-content">
-                    <p>Copyright &copy; {{ 'now' | date: "%Y" }} {{ site.author }}</p>
-                </div>
-            </div>
-            <div class="col-lg-6 col-12">
-                <div class="right-text-content">
-                    <ul id="social-section" class="social-icons">
-                        <li><p>My Socials</p></li>
-                        {% for social in site.data.social %}
-                        <li><a rel="nofollow noopener noreferrer" href="{{ social.url }}" target="_blank" aria-label="{{ social.name }}"><i class="fa {{ social.icon }}" aria-hidden="true"></i></a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
+        <div class="footer-cta">
+            <h2 class="footer-heading">Get In Touch</h2>
+            <p class="footer-subheading">Want to collaborate? Have questions?</p>
+            <a href="{{ site.baseurl }}/contact/" class="footer-contact-btn">Contact Me <i class="fa fa-arrow-right"></i></a>
+        </div>
+        <div class="footer-socials">
+            <p class="footer-socials-label">Find me on</p>
+            <ul class="social-icons">
+                {% for social in site.data.social %}
+                <li><a rel="nofollow noopener noreferrer" href="{{ social.url }}" target="_blank" aria-label="{{ social.name }}"><i class="fa {{ social.icon }}" aria-hidden="true"></i></a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            <p>Copyright &copy; {{ 'now' | date: "%Y" }} {{ site.author }}</p>
         </div>
     </div>
 </footer>

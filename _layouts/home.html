@@ -3,7 +3,7 @@ layout: default
 ---
 
 <!-- ***** Main Banner Area Start ***** -->
-<div class="main-banner header-text" id="top">
+<div class="main-banner header-text" id="hero">
     <div class="Modern-Slider">
       <!-- Item -->
       <div class="item">
@@ -19,9 +19,103 @@ layout: default
       <!-- // Item -->
     </div>
 </div>
-<div class="scroll-down scroll-to-section"><a href="#portfolio-content"><i class="fa fa-arrow-down"></i></a></div>
 <!-- ***** Main Banner Area End ***** -->
 
-<div id="portfolio-content">
-{{ content }}
+<!-- ***** Projects Section Start ***** -->
+<section id="projects-section" class="homepage-section">
+  <div class="container">
+    <div class="homepage-section-header">
+      <i class="fa fa-folder-open" aria-hidden="true"></i>
+      <h2>Projects</h2>
+    </div>
+    <div class="row">
+      {% assign sorted_projects = site.projects | sort: "display_order" %}
+      {% for project in sorted_projects %}
+      <div class="col-lg-6 col-md-6 col-12 card-spacing">
+        <div class="project-card">
+          <a href="{{ project.url }}">
+            {% if project.images.first %}
+            <img src="{{ site.baseurl }}{{ project.images.first.src }}" alt="{{ project.title }}" class="card-thumbnail" loading="lazy">
+            {% else %}
+            <div class="card-thumbnail-placeholder">
+              <i class="fa fa-map" aria-hidden="true"></i>
+            </div>
+            {% endif %}
+          </a>
+          <div class="card-body-content">
+            <span class="card-category">{{ project.categories | first }}</span>
+            <h4 class="card-title">
+              <a href="{{ project.url }}">{{ project.title }}</a>
+            </h4>
+            <p class="card-description">{{ project.description | truncate: 120 }}</p>
+            {% if project.technologies %}
+            <div class="tech-pills">
+              {% for tech in project.technologies limit: 3 %}
+              <span class="tech-pill">{{ tech }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+            <a href="{{ project.url }}" class="card-link">View Project <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% if site.projects.size == 0 %}
+    <div class="text-center">
+      <p class="empty-state">Projects coming soon. Check back later!</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+<!-- ***** Projects Section End ***** -->
+
+<!-- ***** Publications Section Start ***** -->
+<section id="publications-section" class="homepage-section homepage-section-alt">
+  <div class="container">
+    <div class="homepage-section-header">
+      <i class="fa fa-book" aria-hidden="true"></i>
+      <h2>Publications</h2>
+    </div>
+    <div class="row">
+      {% assign sorted_pubs = site.publications | sort: "display_order" %}
+      {% for publication in sorted_pubs %}
+      <div class="col-lg-6 col-md-6 col-12 card-spacing">
+        <div class="publication-card">
+          {% if publication.images.first %}
+          <a href="{{ publication.url }}">
+            <img src="{{ site.baseurl }}{{ publication.images.first.src }}" alt="{{ publication.title }}" class="card-thumbnail" loading="lazy">
+          </a>
+          {% endif %}
+          <div class="card-body-content">
+            <span class="card-category">{{ publication.categories | first }}</span>
+            <h4 class="card-title">
+              <a href="{{ publication.url }}">{{ publication.title }}</a>
+            </h4>
+            <p class="card-description">{{ publication.description | truncate: 120 }}</p>
+            <p class="card-date">
+              <i class="fa fa-calendar"></i> {{ publication.date | date: "%B %Y" }}
+            </p>
+            <a href="{{ publication.url }}" class="card-link">Read More <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% if site.publications.size == 0 %}
+    <div class="text-center" style="padding: 60px 0;">
+      <i class="fa fa-book" style="font-size: 3rem; color: var(--color-primary); margin-bottom: 1rem; display: block;"></i>
+      <h3>Publications Coming Soon</h3>
+      <p class="empty-state">Research publications and articles will be shared here as they become available.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+<!-- ***** Publications Section End ***** -->
+
+<!-- Section Stepper Arrow -->
+<div class="scroll-down" id="section-stepper">
+  <a href="#projects-section" aria-label="Scroll to next section">
+    <i class="fa fa-arrow-down"></i>
+  </a>
 </div>

@@ -150,13 +150,22 @@
     margin: 60px 0;
 }
 
+.about-section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
 .about-skills-section {
-    margin-top: 30px;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .about-skills-heading {
     font-weight: 600;
-    margin-bottom: 15px;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 .about-skills-list {
@@ -191,6 +200,37 @@
 
 .contact-list li {
     margin-bottom: 15px;
+}
+
+/* Homepage full-viewport sections */
+.homepage-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+}
+
+.homepage-section-alt {
+    background: #f8f9fa;
+}
+
+.homepage-section-header {
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.homepage-section-header i {
+    font-size: 2rem;
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.homepage-section-header h2 {
+    font-size: var(--font-size-3xl, 2.25rem);
+    font-weight: 700;
+    color: var(--color-text, #1e1e1e);
 }
 
 /* Responsive: Small phones */

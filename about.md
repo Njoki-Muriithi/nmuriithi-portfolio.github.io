@@ -19,27 +19,24 @@ heading: Who I Am & What I Do
                 experience, and award-winning project coordination skills. My work bridges the gap between
                 complex spatial data and actionable conservation solutions, with a focus on making
                 environmental science accessible and impactful.</p>
-            
-            <p><strong>Working With Me: What to Expect</strong></p>
+
+            <h2 class="about-section-title">Experience & Background</h2>
+            <p>My academic journey at Trent University provided hands-on experience across a wide range of environmental disciplines — from aquatic biomonitoring and forestry to wetland assessment, soil science, and cadastral analysis. Each project deepened my ability to apply GIS and spatial analysis to real-world conservation challenges.</p>
+            <p>I'm committed to bridging the gap between complex spatial data and actionable environmental solutions, with a focus on community-based research and collaborative problem-solving.</p>
+
+            <h2 class="about-section-title">Working With Me: What to Expect</h2>
             <p>I approach every project with curiosity, rigor, and a commitment to delivering products that are
                 both technically sound and user-friendly. Whether I'm building a custom GIS tool, conducting
                 field assessments, or coordinating stakeholder engagement, I prioritize clear communication,
                 attention to detail, and collaborative problem-solving.</p>
             
-            <div class="skills-section" style="margin-top: 30px;">
-                <h5 style="font-weight: 600; margin-bottom: 15px;">My strengths include:</h5>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i><b>Translating complexity into clarity:</b><br> I excel at taking technical GIS analysis and presenting it in formats that non-technical stakeholders can understand and use confidently.</li>
-                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i><b>Building tools that last:</b><br>My projects aren't just one-time deliverables. I design systems
-that organizations can maintain and update independently, with comprehensive
-documentation and training support.</li>
-                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i><b>Navigating sensitive dynamics:</b><br>I have demonstrated experience working on politically
-complex projects involving Indigenous rights, municipal planning, and conservation
-advocacy, always approaching stakeholder relationships with respect and diplomacy.</li>
-                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i><b>Quick adaptation:</b><br>I thrive in environments that require learning new tools, protocols, or
-subject areas quickly. My track record spans aquatic biomonitoring, forestry, wetland
-assessment, soil science, and cadastral analysis—all developed through initiative and
-self-directed learning.</li>
+            <div class="about-skills-section">
+                <h3 class="about-skills-heading">My strengths include:</h3>
+                <ul class="about-skills-list">
+                    <li><i class="fa fa-check about-check-icon"></i><b>Translating complexity into clarity:</b><br> I excel at taking technical GIS analysis and presenting it in formats that non-technical stakeholders can understand and use confidently.</li>
+                    <li><i class="fa fa-check about-check-icon"></i><b>Building tools that last:</b><br>My projects aren't just one-time deliverables. I design systems that organizations can maintain and update independently, with comprehensive documentation and training support.</li>
+                    <li><i class="fa fa-check about-check-icon"></i><b>Navigating sensitive dynamics:</b><br>I have demonstrated experience working on politically complex projects involving Indigenous rights, municipal planning, and conservation advocacy, always approaching stakeholder relationships with respect and diplomacy.</li>
+                    <li><i class="fa fa-check about-check-icon"></i><b>Quick adaptation:</b><br>I thrive in environments that require learning new tools, protocols, or subject areas quickly. My track record spans aquatic biomonitoring, forestry, wetland assessment, soil science, and cadastral analysis—all developed through initiative and self-directed learning.</li>
                 </ul>
             </div>
 
@@ -47,20 +44,20 @@ self-directed learning.</li>
 GIS becomes a tool for empowerment rather than just data visualization. I value organizations
 that prioritize collaboration, continuous learning, and inclusive practices.</p>
 
-            <h3>Skills:</h3>
-            <div class="skills-section" style="margin-top: 30px;">
-                <h5 style="font-weight: 600; margin-bottom: 15px;">GIS & Spatial Analysis:</h5>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i>ArcGIS Pro (Spatial Analyst, ModelBuilder, Network Analyst)</li>
-                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i><b>Python scripting (ArcPy)</b></li>
-                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i><b>ArcGIS Online (web maps, dashboards, feature services)</b></li>
-                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i>ESRI Field Maps and Survey123</li>
-                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i>ESRI StoryMaps</li>
-                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i>QGIS</li>
-                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i>Remote sensing and NDVI analysis (ENVI)</li>
-                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i>Cadastral mapping and land tenure analysis</li>
-                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i>Site suitability modeling and weighted overlay analysis</li>
-                    <li style="margin-bottom: 10px;"><i class="fa fa-check" style="color: #5fb759; margin-right: 10px;"></i>Geodatabase design and management</li>
+            <h2 class="about-section-title">Skills</h2>
+            <div class="about-skills-section">
+                <h3 class="about-skills-heading">GIS & Spatial Analysis:</h3>
+                <ul class="about-skills-list">
+                    <li><i class="fa fa-check about-check-icon"></i>ArcGIS Pro (Spatial Analyst, ModelBuilder, Network Analyst)</li>
+                    <li><i class="fa fa-check about-check-icon"></i><b>Python scripting (ArcPy)</b></li>
+                    <li><i class="fa fa-check about-check-icon"></i><b>ArcGIS Online (web maps, dashboards, feature services)</b></li>
+                    <li><i class="fa fa-check about-check-icon"></i>ESRI Field Maps and Survey123</li>
+                    <li><i class="fa fa-check about-check-icon"></i>ESRI StoryMaps</li>
+                    <li><i class="fa fa-check about-check-icon"></i>QGIS</li>
+                    <li><i class="fa fa-check about-check-icon"></i>Remote sensing and NDVI analysis (ENVI)</li>
+                    <li><i class="fa fa-check about-check-icon"></i>Cadastral mapping and land tenure analysis</li>
+                    <li><i class="fa fa-check about-check-icon"></i>Site suitability modeling and weighted overlay analysis</li>
+                    <li><i class="fa fa-check about-check-icon"></i>Geodatabase design and management</li>
                 </ul>
             </div>
         </div>
@@ -72,16 +69,3 @@ that prioritize collaboration, continuous learning, and inclusive practices.</p>
     </div>
 </div>
 
-<div class="row" style="margin: 60px 0px 60px 0px;">
-    <div class="col-lg-12">
-        <div class="section-heading">
-            <h6>My Journey</h6>
-            <h2>Experience & Background</h2>
-        </div>
-    </div>
-    <div class="col-lg-12">
-        <p>My academic journey at Trent University provided hands-on experience across a wide range of environmental disciplines — from aquatic biomonitoring and forestry to wetland assessment, soil science, and cadastral analysis. Each project deepened my ability to apply GIS and spatial analysis to real-world conservation challenges.</p>
-
-        <p>I'm committed to bridging the gap between complex spatial data and actionable environmental solutions, with a focus on community-based research and collaborative problem-solving.</p>
-    </div>
-</div>

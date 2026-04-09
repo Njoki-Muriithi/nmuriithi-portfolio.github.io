@@ -23,6 +23,7 @@ Thumbs.db
 
 #spec documentation
 openspec
+.superpowers/
 
 # Local dev config (contains GitHub PAT)
 _config_local.yml
@@ -31,3 +32,8 @@ _config_local.yml
 .claude
 AGENTS.md
 CLAUDE.md
+
+
+#Test
+.playwright-mcp
+playwright-report/

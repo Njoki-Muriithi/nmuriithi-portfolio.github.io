@@ -30,26 +30,26 @@ test.describe('Footer presence on all pages', () => {
 test.describe('Footer social links', () => {
   test('footer contains at least one social link', async ({ page }) => {
     await page.goto('/');
-    const socialLinks = page.locator('#social-section a');
+    const socialLinks = page.locator('footer .social-icons a');
     const count = await socialLinks.count();
     expect(count, 'Footer should have at least one social link').toBeGreaterThan(0);
   });
 
   test('LinkedIn link is present in footer', async ({ page }) => {
     await page.goto('/');
-    const linkedIn = page.locator('#social-section a[href*="linkedin.com"]');
+    const linkedIn = page.locator('footer .social-icons a[href*="linkedin.com"]');
     await expect(linkedIn).toBeAttached();
   });
 
   test('GitHub link is present in footer', async ({ page }) => {
     await page.goto('/');
-    const github = page.locator('#social-section a[href*="github.com"]');
+    const github = page.locator('footer .social-icons a[href*="github.com"]');
     await expect(github).toBeAttached();
   });
 
   test('social links open in new tab', async ({ page }) => {
     await page.goto('/');
-    const socialLinks = page.locator('#social-section a[href^="http"]');
+    const socialLinks = page.locator('footer .social-icons a[href^="http"]');
     const count = await socialLinks.count();
 
     for (let i = 0; i < count; i++) {
@@ -59,7 +59,7 @@ test.describe('Footer social links', () => {
 
   test('social links have rel="noopener" or "noreferrer"', async ({ page }) => {
     await page.goto('/');
-    const socialLinks = page.locator('#social-section a[href^="http"]');
+    const socialLinks = page.locator('footer .social-icons a[href^="http"]');
     const count = await socialLinks.count();
 
     for (let i = 0; i < count; i++) {
@@ -70,7 +70,7 @@ test.describe('Footer social links', () => {
 
   test('social links have aria-label for accessibility', async ({ page }) => {
     await page.goto('/');
-    const socialLinks = page.locator('#social-section a[href^="http"]');
+    const socialLinks = page.locator('footer .social-icons a[href^="http"]');
     const count = await socialLinks.count();
 
     for (let i = 0; i < count; i++) {
@@ -83,14 +83,14 @@ test.describe('Footer social links', () => {
 test.describe('Footer copyright', () => {
   test('copyright text contains author name', async ({ page }) => {
     await page.goto('/');
-    const copyright = page.locator('footer .left-text-content');
+    const copyright = page.locator('footer .footer-copyright');
     const text = (await copyright.textContent()) ?? '';
     expect(text).toContain('Njoki Muriithi');
   });
 
   test('copyright text contains current year', async ({ page }) => {
     await page.goto('/');
-    const copyright = page.locator('footer .left-text-content');
+    const copyright = page.locator('footer .footer-copyright');
     const text = (await copyright.textContent()) ?? '';
     const currentYear = new Date().getFullYear().toString();
     expect(text).toContain(currentYear);

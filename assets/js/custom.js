@@ -213,4 +213,60 @@
 	}
 
 
+	// Section stepper arrow (homepage)
+	(function() {
+		var sections = ['#hero', '#projects-section', '#publications-section', '#site-footer'];
+		var stepper = document.getElementById('section-stepper');
+		if (!stepper) return;
+
+		var stepperLink = stepper.querySelector('a');
+
+		function getCurrentSectionIndex() {
+			var scrollPos = window.scrollY || window.pageYOffset;
+			var headerHeight = document.querySelector('.header-area') ? document.querySelector('.header-area').offsetHeight : 80;
+			for (var i = sections.length - 1; i >= 0; i--) {
+				var el = document.querySelector(sections[i]);
+				if (el && el.offsetTop - headerHeight - 100 <= scrollPos) {
+					return i;
+				}
+			}
+			return 0;
+		}
+
+		function updateStepper() {
+			var idx = getCurrentSectionIndex();
+			var nextIdx = idx + 1;
+			if (nextIdx < sections.length) {
+				stepperLink.setAttribute('href', sections[nextIdx]);
+				stepper.classList.remove('hidden');
+			} else {
+				stepper.classList.add('hidden');
+			}
+		}
+
+		stepperLink.addEventListener('click', function(e) {
+			e.preventDefault();
+			var target = document.querySelector(stepperLink.getAttribute('href'));
+			if (target) {
+				var headerHeight = document.querySelector('.header-area') ? document.querySelector('.header-area').offsetHeight : 80;
+				$('html, body').animate({
+					scrollTop: target.offsetTop - headerHeight
+				}, 700);
+			}
+		});
+
+		var ticking = false;
+		window.addEventListener('scroll', function() {
+			if (!ticking) {
+				requestAnimationFrame(function() {
+					updateStepper();
+					ticking = false;
+				});
+				ticking = true;
+			}
+		});
+
+		updateStepper();
+	})();
+
 })(window.jQuery);
